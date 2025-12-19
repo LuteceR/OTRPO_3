@@ -1,0 +1,50 @@
+{
+  "_bootstrap.bundle.min-BEkL6rQ0.js": {
+    "file": "assets/bootstrap.bundle.min-BEkL6rQ0.js",
+    "name": "bootstrap.bundle.min"
+  },
+  "_jquery-CEMonh9Y.js": {
+    "file": "assets/jquery-CEMonh9Y.js",
+    "name": "jquery"
+  },
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js?commonjs-entry": {
+    "file": "assets/bootstrap.bundle.min-C9-GKJUr.js",
+    "name": "bootstrap.bundle.min",
+    "src": "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js?commonjs-entry",
+    "isEntry": true,
+    "imports": [
+      "_bootstrap.bundle.min-BEkL6rQ0.js"
+    ]
+  },
+  "node_modules/jquery/dist/jquery.js?commonjs-entry": {
+    "file": "assets/jquery-u6RqBvZQ.js",
+    "name": "jquery",
+    "src": "node_modules/jquery/dist/jquery.js?commonjs-entry",
+    "isEntry": true,
+    "imports": [
+      "_jquery-CEMonh9Y.js"
+    ]
+  },
+  "resources/js/index.js": {
+    "file": "assets/index-BJuB39CM.js",
+    "name": "index",
+    "src": "resources/js/index.js",
+    "isEntry": true,
+    "imports": [
+      "_bootstrap.bundle.min-BEkL6rQ0.js",
+      "_jquery-CEMonh9Y.js"
+    ],
+    "css": [
+      "assets/style-Dn7geP_X.css"
+    ]
+  },
+  "resources/sass/style.scss": {
+    "file": "assets/style-Dn7geP_X.css",
+    "src": "resources/sass/style.scss",
+    "isEntry": true,
+    "name": "style",
+    "names": [
+      "style.css"
+    ]
+  }
+}

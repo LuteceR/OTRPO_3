@@ -1,0 +1,677 @@
+//bootstraping bootstrap
+$primary: #54a8fc;
+
+@import "~bootstrap/scss/bootstrap";
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xlsm: 2000px
+);
+
+// @import "~/node_modules/bootstrap/scss/bootstrap.scss";
+
+@media (min-width: 2000px) {
+    .col-xlsm {
+        min-width: 450px;
+        max-width: 450px;
+
+        .card {
+            min-width: 400px;
+            align-self: center;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        .card {
+            max-width: 200px;
+            align-self: center;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        .card {
+            min-width: 360px;
+            align-self: center;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .col-sm-12 {
+        .card {
+            min-width: 80%;
+            align-self: center;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .col-sm-12 {
+        .card {
+            min-width: 90%;
+            align-self: center;
+        }
+    }
+}
+
+$main-color1: #54a8fc;
+$main-color2: #8cc3fc;
+$main-color3: #2c445c;
+$main-color4: #5c708e;
+$main-color5: hsl(48, 27%, 79%);
+$main-color6: #2c3c54;
+
+// размерность grid'a
+$n: 12;
+
+// colors from UI in the game
+$game-UI-colors: #8cc3fc, #7783ac, #619cc4, #b6b697, #8bada3, #e7abb4;
+
+//vars
+$width: 1000px;
+$font: "Montserrat";
+
+body {
+    margin: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 1080px;
+
+    background: linear-gradient(-40deg, 
+    rgba($main-color1, 0.7) 6%, 
+    rgba($main-color3, 0.7) 50%, 
+    rgba($main-color3, 0.7) 90%, 
+    rgba($main-color2, 0.7));
+}
+
+.body-copy {
+    display: flex;
+    // flex-grow: 0;
+    // flex-shrink: 0;
+    position: fixed;
+
+    @for $move from  1 through 3 {
+        :nth-child(#{$move}) {
+            top: $move * 1vh;
+            right: $move * 1vh;
+        }
+    }
+    
+    width: 100%;
+    // min-height: 1080px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// @for $move from 5 through 15 {
+//     .body-copy {
+//         display: flex;
+//         // flex-grow: 0;
+//         // flex-shrink: 0;
+//         position: fixed;
+//         top: $move * 1vh;
+//         right: $move * 1vh;
+//         width: 100%;
+//         // min-height: 1080px;
+//         height: 100%;
+//         margin: 0;
+//         padding: 0;
+//     }
+// }
+
+$b_: 1.8rem;
+
+.toast-header{ 
+    height: $b_ * 2.5;
+    padding-bottom: calc($b_ / 2);
+    padding-top: calc($b_ / 2);
+}
+
+.toast-body {
+    padding-left: $b_;
+    padding-right: $b_;
+}
+
+$size_: 3.5rem;
+
+#usa {
+    width: 2rem;
+    height: 2rem;    
+}
+
+#img-earth {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
+    margin-bottom: 0.8rem;
+    // position:relative;
+    content: "";
+    align-items: center;
+    justify-content: center;
+    background-image: url("/icons/usa.svg");
+    background-size: cover;
+
+    // &::after{
+    //     content: "";
+    //     display: block;
+    //     width: 1rem;
+    //     height: 1rem;
+    //     background-image: url("/icons/truck.jpg");
+    //     background-size: cover;
+    //     position: absolute;
+    //     bottom: 1.8rem;
+    //     // rotate: -20deg;
+    //     // animation:spin 4s linear infinite;
+    // }
+}
+
+// .c-hide {
+//     z-index: -1;
+// }
+
+// .c-show {
+//     z-index: 100;
+// }
+
+#contextmenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    font-family: $font;
+    font-weight: 500;
+    // height: 100%;
+    // padding-top: 0.8rem;
+    // padding-bottom: 0.8rem;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba($main-color1, 0.8);
+    border-style: double;
+    border: solid rgba($main-color2, 0.8) 1px;
+    outline: solid rgba($main-color1, 0.8) 1px;
+    border-radius: 0.3rem;
+    transition: all .3s ease;
+    user-select: none;
+
+    #button-edit {
+        height: 3.3rem;
+        // padding-top: 0.8rem;
+        // padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+        // border-top-left-radius: 0.3rem;
+        // border-top-right-radius: 0.3rem;
+        // border-radius: 0.3rem;
+        // background-color: rgba($main-color1, 0.8);
+        cursor: pointer;
+        
+        &:hover {
+            background-color: rgba($main-color2, 0.7);
+        }
+    }
+
+    #button-del {
+        display: flex;
+        height:2.8rem;
+        // padding-top: 0.8rem;
+        // padding-bottom: 0.8rem;
+        // padding-left: 1rem;
+        // padding-right: 1rem;
+        border-bottom-right-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        width: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        // background-color: rgba($main-color1, 0.8);
+        cursor: pointer;
+        
+        &:hover {
+            background-color: rgba($main-color2, 0.7);
+        }
+    }
+    
+    #button-add {
+        display: flex;
+        height:2.8rem;
+        // padding-top: 0.8rem;
+        // padding-bottom: 0.8rem;
+        // padding-left: 1rem;
+        // padding-right: 1rem;
+        border-top-right-radius: 0.3rem;
+        border-top-left-radius: 0.3rem;
+        width: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        // background-color: rgba($main-color1, 0.8);
+        cursor: pointer;
+        
+        &:hover {
+            background-color: rgba($main-color2, 0.7);
+        }
+    }
+}
+
+.table {
+    z-index: 1000;
+    opacity: 1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: fixed;
+    // background-color: rgba($main-color1, 0.9);
+
+    background-color: rgba($main-color1, 0.9);
+    border-style: double;
+    border: solid rgba($main-color2, 0.8) 1px;
+    outline: solid rgba($main-color1, 0.8) 1px;
+    border-radius: 0.3rem;
+
+    border-radius: 0.5rem;
+    height: 30rem;
+    width: 30rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    span {
+        margin:1rem;
+        align-self: center;
+        font-family: $font;
+    }
+
+    div {
+        margin: 1rem;
+        display:flex;
+        flex-direction: row;
+
+        form {
+            width: 100%;
+        }
+
+        button {
+            display: flex;
+            height: auto !important;
+            margin-left: auto !important;
+            margin-right: 4rem;
+        }
+
+        input, button {
+            background-color:rgba(156, 204, 255, 0.8);
+            border-style: double;
+            border: solid rgba($main-color4, 0.6) 1px;
+            outline: solid rgba(156, 204, 255, 0.8) 1px;
+            border-radius: 0.3rem;
+            border-radius: 0.3rem;
+            align-self: center;
+            margin-left: auto;
+            height: 1.6rem;
+        }
+    }
+
+    .attrName {
+        font-family: $font;
+    }
+
+    .btns {
+        display:flex;
+        margin-top:auto;
+        justify-content: center;
+        align-content: center;
+
+        .button-ok {
+            margin: 0.4rem;
+            padding:0.4rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-family: $font;
+            border: none;
+            border-radius: 0.3rem;
+            justify-self: center;
+            background-color: rgba($main-color4, 0.6);
+            min-height: 1.5rem;
+            min-width: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba($main-color3, 0.6);
+            }
+        }
+    
+        .button-cancel {
+            margin: 0.4rem;
+            padding:0.4rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-family: $font;
+            border-radius: 0.3rem;
+            justify-self: center;
+            background-color: rgba($main-color4, 0.6);
+            min-height: 1.5rem;
+            min-width: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba($main-color3, 0.6);
+            }
+        }
+    }
+}
+
+.img-truck {
+    // display: block;
+    width: 100%;
+    height: 100%;
+    bottom: 4rem;
+    right: 2rem;
+    bottom: -1px;
+    // position: relative;
+    // rotate: 15deg;
+    animation:spin 4s linear infinite;
+
+    &::before {
+        display: block;
+        content: " ";
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        right: -15px;
+        rotate: 70deg;
+        background-image: url("/icons/truck.jpg");
+        background-size: cover;
+    }
+}
+
+// #truck {
+//     min-height: $size_;
+//     min-width: $size_;
+//     position: absolute;
+//     right: 2px;
+//     padding-bottom: 2.3rem;
+//     rotate: 10deg;
+//     animation:spin 4s linear infinite;
+// }
+
+@keyframes spin { 
+    100% {
+        transform:rotate(360deg); 
+    } 
+}
+
+.btn {
+    // margin-left: auto;
+    margin-right: 3rem;
+}
+
+.toast-header {
+    background-color: $main-color3;
+    color: #8cc3fc;
+
+    img {
+        max-height: 40px;
+        max-width: 40px;
+    }
+}
+
+.modal-img {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.toast-body {
+    background-color: $main-color6;
+    color: #8cc3fc;
+}
+
+.container-fluid {
+    // удаляет margin-left/-right у navbar'a
+    --bs-gutter-x: 0rem;
+    
+    justify-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin: 0;
+    // background: linear-gradient(-40deg, 
+    // rgba($main-color1, 0.7) 6%, 
+    // rgba($main-color3, 0.7) 50%, 
+    // rgba($main-color3, 0.7) 90%, 
+    // rgba($main-color2, 0.7));
+}
+
+@mixin neon-text {
+  text-shadow:
+    0 0 0.3rem #fff,
+    0 0 2rem $main-color1,
+}
+
+.bttn {
+    display: flex;
+    margin: auto;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-family: $font;
+    color: rgb(32, 32, 32);
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 3px;
+    background-color: $main-color4;
+    align-self: center;
+}
+
+.nav {
+    a {
+        display: inline-block;
+        margin-left: auto;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-family: $font;
+        color: rgb(32, 32, 32);
+        transition: background-color 0.3s ease;
+        border: none;
+        border-radius: 3px;
+        background-color: gray;
+    }
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    border-bottom: 0.3rem solid rgba($main-color2, 0.3);
+    background-color: $main-color4;
+
+    .logo {
+    display: flex;
+    margin-left: 3rem;
+
+        img {
+            max-height: 50px;
+            max-width: 40px;
+        }
+    }
+
+    .web-name {
+        margin-left: 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $main-color3;
+        font-family: $font;
+        text-shadow: 
+        2px 0px 4px rgba($main-color2, 0.8),
+        2px 2px 2px rgba(white, 0.5);
+    }
+}
+
+// новая генерация background-color для .card
+.container-fluid {
+    width: 100%;
+    @for $i from 0 through $n {
+        :nth-child(#{$i}) {
+            @for $i from 0 through $n {
+                :nth-child(#{$i}) {
+                    .card {
+                        $chosen-color: nth($game-UI-colors, random(length($game-UI-colors)));
+                        background-color: rgba($chosen-color, 0.6);
+                        box-shadow: 8px 5px 1px rgba($chosen-color, 0.2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card {
+    height: 750px !important;
+}
+
+.row {
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+}
+
+.card {
+    // display: flex;
+    // flex-direction: column;
+    // border-radius: 0.5rem;
+    // border: solid $main-color2;
+    cursor: pointer;
+    margin: 1rem;
+    padding: 1rem;
+    // height: 123rem;
+    width: 30vh;
+    //width: calc($width/3);
+    
+    // $chosen-color: nth($game-UI-colors, random(length($game-UI-colors)));
+    // background-color: rgba($chosen-color, 0.6);
+    // color: $main-color6;
+
+    // setting the background-color
+    // @for $i from 0 through 500 {
+    //     &:nth-child(#{$i}) {
+    //         $chosen-color: nth($game-UI-colors, random(length($game-UI-colors)));
+    //         background-color: rgba($chosen-color, 0.6);
+    //         box-shadow: 8px 5px 1px rgba($chosen-color, 0.2);
+    //     }
+    // }
+
+    .img img {
+        width: calc($width/5);
+        border-radius: 0.5rem;
+        box-shadow: 8px 5px 1px rgba($main-color1, 0.3);
+        background-size: cover;
+    }
+
+    span.name {
+        margin:0.8rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        font-size: 1.3rem;
+        font-family: $font;
+        font-weight: 600;
+        @include neon-text;
+    }
+
+    span.desc {
+        // text-shadow: 
+        //     1px 0px 2px rgba($main-color2, 0.8),
+        //     1px 0px 1px rgba(white, 0.5);
+        display:flex;
+        font-size: 1rem;
+        font-family: $font;
+        font-weight: 600;
+    }
+}
+
+.desc {
+        // text-shadow: 
+        //     1px 0px 2px rgba($main-color2, 0.8),
+        //     1px 0px 1px rgba(white, 0.5);
+        font-size: 1rem;
+        font-family: $font;
+        font-weight: 500;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+.header {
+    font-weight: 600;
+}
+
+// for spans for popovers
+.to_popover {
+    // text-shadow: 
+    //     1px 0px 2px rgba($main-color2, 0.8),
+    //     1px 0px 1px rgba(white, 0.5);
+    cursor: pointer;
+    width: auto;
+    font-size: 1rem;
+    font-family: $font;
+    font-weight: 700;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    width: 100%;
+    top: 150vh;
+    border-top: 4px solid rgba($main-color2, 0.8);
+    box-shadow: 0px -2px 6px rgba($main-color2, 0.8);
+    background-color:rgba($main-color2, 0.6);
+    align-items: center;
+    margin-top: auto;
+
+    .github-logo {
+        align-self: center;
+        margin-left: 2rem;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid $main-color4;
+    }
+
+    .github-href {
+        align-self: center;
+        margin-left: auto;
+
+        a img {
+            height: 50px;
+        }
+    }
+
+    .yandex-href {
+        margin-left: 2rem;
+        margin-right: 12rem;
+
+        a img {
+            height: 50px;
+        }
+    }
+    
+    span {
+        padding-left: 1.5rem;
+        font-family: $font;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+}
