@@ -46,6 +46,9 @@
                 <img src="icons/favicon.ico" alt="logo">
             </div>
             <div class="web-name">Death Stranding</div>
+            
+            @yield('userName')
+            
             <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
             <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
 

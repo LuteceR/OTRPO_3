@@ -27,3 +27,15 @@ Route::patch(
     )->name('character-cards.restore');
 
 Route::resource('character-cards', CharacterCardController::class);
+
+Route::get('/', [CharacterCardController::class, 'login']);
+
+Route::post('/', [CharacterCardController::class, 'tryAuth'])->name('tryAuth');
+
+Route::get('/registr', [CharacterCardController::class, 'registr'])->name('registr');
+
+Route::post('/registr', [CharacterCardController::class, 'tryRegistr'])->name('tryRegistr');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/character-cards', [CharacterCardController::class, 'index'])->name('character-cards.index');
+});

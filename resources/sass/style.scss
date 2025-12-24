@@ -269,6 +269,35 @@ $size_: 3.5rem;
     }
 }
 
+div:has(input.checkBox) {
+    display: flex;
+    // align-content: flex-start;
+    width: auto;
+    // span {
+    //     display: flex;
+    //     align-self: right;
+    //     text-align: right;
+    // }
+}
+
+input.checkBox {
+    appearance: none;
+    display: flex;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    border-radius: 10px;
+    justify-content: center;
+    cursor: pointer;
+
+    &:checked {
+        background-color:  #b7daff;
+
+        &:after {
+            content: "✓";
+        }
+    }
+}
+
 .table {
     z-index: 1000;
     opacity: 1;
@@ -285,7 +314,7 @@ $size_: 3.5rem;
     border-radius: 0.3rem;
 
     border-radius: 0.5rem;
-    height: 30rem;
+    height: auto;
     width: 30rem;
     top: 50%;
     left: 50%;
@@ -333,8 +362,8 @@ $size_: 3.5rem;
     .btns {
         display:flex;
         margin-top:auto;
-        justify-content: center;
-        align-content: center;
+        justify-self: center;
+        align-self: center;
 
         .button-ok {
             margin: 0.4rem;
@@ -355,7 +384,7 @@ $size_: 3.5rem;
             }
         }
     
-        .button-cancel {
+        .button-cancel, .button-back-main, .button-registr, .button-back-login {
             margin: 0.4rem;
             padding:0.4rem;
             padding-left: 1rem;
@@ -476,6 +505,18 @@ $size_: 3.5rem;
     align-self: center;
 }
 
+.user {
+    display: flex;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    font-weight: 500;
+
+    .userName {
+        align-self: center;
+        justify-self: end;
+    }
+}
+
 .nav {
     a {
         display: inline-block;
@@ -511,6 +552,7 @@ $size_: 3.5rem;
     }
 
     .web-name {
+        width:auto;
         margin-left: 2rem;
         font-size: 2rem;
         font-weight: 700;

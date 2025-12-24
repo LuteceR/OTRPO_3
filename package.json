@@ -19,6 +19,7 @@
         "bootstrap": "^5.3.8",
         "jquery": "^3.7.1",
         "vite": "^7.2.7",
+        "webpack": "^5.104.1",
         "webpack-dev-server": "^5.2.2"
     }
 }

@@ -129,6 +129,14 @@ $(document).ready(function() {
         // document.getElementsByClassName('table')[0].style.opacity = 0;
     });
 
+    $(".button-registr").on("click", function() {
+        window.location.replace("/registr");
+    });
+
+    $(".button-back-login").on("click", function(event) {
+        window.location.replace("/");
+    });
+
     // $(".button-ok").on("click", function() {
     //     window.location.replace("/character-cards");
     //     // console.log(document.getElementsByClassName('table')[0]);
