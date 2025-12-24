@@ -26,20 +26,17 @@
     ]
   },
   "resources/js/index.js": {
-    "file": "assets/index-DUEwzUGq.js",
+    "file": "assets/index-DhqPyGc_.js",
     "name": "index",
     "src": "resources/js/index.js",
     "isEntry": true,
     "imports": [
       "_bootstrap.bundle.min-BEkL6rQ0.js",
       "_jquery-CEMonh9Y.js"
-    ],
-    "css": [
-      "assets/style-B2OI3zBx.css"
     ]
   },
   "resources/sass/style.scss": {
-    "file": "assets/style-B2OI3zBx.css",
+    "file": "assets/style-DvYDy_Pf.css",
     "src": "resources/sass/style.scss",
     "isEntry": true,
     "name": "style",

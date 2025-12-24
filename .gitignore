@@ -15,3 +15,5 @@ yarn-error.log
 /.vscode
 composer.json
 package-lock.json
+public/build
+.gitignore
