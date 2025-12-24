@@ -1,0 +1,19 @@
+[90m= [39m[34;4mApp\Models\CharacterCard[39;24m {#5739
+    [34mid[39m: [35m1[39m,
+    [34muser_id[39m: [35m1[39m,
+    [34mname[39m: "[32mSam Bridges[39m",
+    [34mimg_url[39m: "[32mSam.png[39m",
+    [34mtiny_desc[39m: "[32mis a legendary porter and a former executive member of Bridges who played an integral role in expanding the Chiral Network and making the United Cities of America whole by embarking on a westward expedition.[39m",
+    [34mlong_desc[39m: """
+      [32m<div class='desc'>[39m\n
+      [32m            Sam was born on November 9th, to Clifford Unger and <span class='to_popover'>Lisa Bridges</span>. In an effort to save his unborn son after Lisa was rendered brain dead in an accident, Cliff willingly placed Sam under the care of <span class='to_popover'>Bridges</span> scientists conducting <span class='to_popover'>Bridge Baby</span> experiments, but did so unaware of their true intentions: to use Sam as a sacrificial foundation for a new communications network as the first proper bridge baby. Upon learning of these intentions from an old comrade and friend, Cliff attempted to abduct Sam from a <span class='to_popover'>Bridges</span> facility, but was gunned down in the process, resulting in his and Sam's deaths. On the <span class='to_popover'>Beach</span>, Sam was healed and brought back to life by Amelie, who bestowed to him the ability of repatriation. No longer viable as a bridge baby by virtue of being a repatriate, he was taken into Bridget's care and raised as her son, Sam Strand. However, his revival upset the balance of life and death, triggering the <span class='to_popover'>Death Stranding</span>.[39m\n
+      [32m        </div>[39m\n
+      [32m        <div class='desc'>[39m\n
+      [32m            In his youth, as a sufferer of <span class='to_popover'>DOOMS</span>, Sam had severe nightmares and would find himself stranded on the <span class='to_popover'>Beach</span> unable to find his way out. Always there for him in such moments, Amelie would arrive to calm Sam and help him make his way out of the <span class='to_popover'>Beach</span>. Sam fashioned a quipu for Amelie in the world of the living, and was able to bring it with him to the <span class='to_popover'>Beach</span>, where he gifted it to Amelie as a representation of their bond.[39m\n
+      [32m        </div>[39m
+      """,
+    [34mcreated_at[39m: [36mnull[39m,
+    [34mupdated_at[39m: "[32m2025-12-24 17:31:07[39m",
+    [34mdeleted_at[39m: [36mnull[39m,
+  }
+

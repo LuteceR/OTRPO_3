@@ -137,12 +137,7 @@ $(document).ready(function() {
         window.location.replace("/");
     });
 
-    // $(".button-ok").on("click", function() {
-    //     window.location.replace("/character-cards");
-    //     // console.log(document.getElementsByClassName('table')[0]);
-    //     // document.getElementsByClassName('table')[0].style.zIndex = -999;
-    //     // document.getElementsByClassName('table')[0].style.opacity = 0;
-    // });
+    
 
     for (var i = 0; i < myCards.length; i++) 
         myCards[i].addEventListener('contextmenu', function(event) {

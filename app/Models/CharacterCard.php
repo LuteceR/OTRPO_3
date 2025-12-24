@@ -79,4 +79,10 @@ class CharacterCard extends Model
 
         return null;
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

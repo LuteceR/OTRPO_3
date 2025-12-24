@@ -8,6 +8,14 @@
     @else 
         <span class="userName">{{ $login }}</span>
     @endif
+
+<script>
+    const user = @json(Auth::user());
+    // $card = CharacterCard::find(1);
+
+    // $username = $card->user->name;
+</script>
+
 </div>
 
 @endsection
@@ -25,7 +33,10 @@
                         <span class='name'>{{ $card->name }}</span>
                         <span class='card-text'>{{ $card->tiny_desc }}</span>
                     </div>
+                <div>
+                    <span>Создал: </span><span class="creator">{{ $card->user->name ?? 'Неизвестно' }}</span>
                 </div>
+            </div>
         </div>
     @else
 
@@ -36,7 +47,10 @@
                     <span class='name'>{{ $card->name }}</span>
                     <span class='card-text'>{{ $card->tiny_desc }}</span>
                 </div>
+            <div>
+                <span>Создал: </span><span class="creator">{{ $card->user->name ?? 'Неизвестно' }}</span>
             </div>
+        </div>
     </div>
         
         @endif
