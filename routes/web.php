@@ -32,3 +32,14 @@ Route::resource('character-cards', CharacterCardController::class);
 Route::get('character-cards/{id}/comments', [CardCommentController::class, 'index'])->name('card-comments.index');
 Route::get('character-cards/{id}/comments/create', [CardCommentController::class, 'create'])->name('card-comments.create');
 Route::post('character-cards/{id}/comments', [CardCommentController::class, 'store'])->name('card-comments.store');
+Route::get('/', [CharacterCardController::class, 'login']);
+
+Route::post('/', [CharacterCardController::class, 'tryAuth'])->name('tryAuth');
+
+Route::get('/registr', [CharacterCardController::class, 'registr'])->name('registr');
+
+Route::post('/registr', [CharacterCardController::class, 'tryRegistr'])->name('tryRegistr');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/character-cards', [CharacterCardController::class, 'index'])->name('character-cards.index');
+});

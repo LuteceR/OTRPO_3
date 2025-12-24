@@ -40,14 +40,19 @@
         </div>
     </div>
 
-    <div class="nav navbar navbar-expand-lg">
-        <div class="navbar-brand logo">
-            <img src="/icons/favicon.ico" alt="logo">
-        </div>
-        <div class="web-name">Death Stranding</div>
-        <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
-        <button id="liveToastBtn" type="button" class="btn btn-primary">Скачать</button>
-    </div>
+    <div class="container-fluid d-flex">
+        <div class="nav navbar navbar-expand-lg">
+            <div class="navbar-brand logo">
+                <img src="icons/favicon.ico" alt="logo">
+            </div>
+            <div class="web-name">Death Stranding</div>
+            
+            @yield('userName')
+            
+            <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
+            <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
+
+            @yield('characterCards')
 
     <div class="container-fluid d-flex">
         @yield('characterCards')

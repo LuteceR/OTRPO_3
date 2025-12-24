@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\CharacterCard;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -34,11 +37,15 @@ class CharacterCardController extends Controller
         // $cards = CharacterCard::all();
         // dd($cards); 
 
+        $login = session('login');
+        $isAdmin = session('is_admin');
+
+
         $cards = CharacterCard::query()
             ->orderBy('id')
             ->paginate(10);
 
-        return view('character-cards.index', compact('cards'));
+        return view('character-cards.index', compact('cards', 'login', 'isAdmin'));
     }
 
     /**
@@ -151,5 +158,77 @@ class CharacterCardController extends Controller
         $cards = CharacterCard::onlyTrashed()->get();
 
         return view('character-cards.deleted', compact('cards'));
+    }
+
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function tryAuth(Request $request) 
+    {
+        $request->validate([
+                'login'    => 'required|string',
+                'password' => 'required|string',
+        ]);
+
+        $loginInput = $request->input('login');
+        $password = $request->input('password');
+        $remember = $request->filled('remember');
+
+
+        if (strpos($loginInput, '@') !== false && strpos($loginInput, '.') !== false) {
+            $credentials = [
+                'email' => $loginInput,
+                'password' => $password,
+            ];
+        } else {
+            $credentials = [
+                'name' => $loginInput,
+                'password' => $password,
+            ];
+        }
+
+        $remember = $request->filled('remember');
+
+        $request->session()->put('login', $loginInput);
+        $request->session()->put('is_admin', Auth::user()->is_admin);
+
+        // Попытка авторизации
+        if (Auth::attempt($credentials, $remember)) {
+            $request->session()->regenerate();
+            return redirect()->route('character-cards.index'); // редирект после успешного логина
+        }
+
+        // Если данные неверные
+        return back()->withErrors([
+            'login' => 'Неверный email или пароль',
+        ])->onlyInput('login');
+    }
+
+    public function registr() {
+        return view('character-cards.registr');
+    }
+
+    public function tryRegistr(Request $request) 
+    {
+        $request->validate([
+                'name'    => 'required|string|unique:users,name',
+                'email' => 'required|string|email|unique:users,email',
+                'password' => 'required|string',
+        ]);
+
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password'))
+        ]);
+
+        $remember = $request->filled('remember');
+
+        Auth::login($user, $remember);
+
+        return redirect()->route('character-cards.index');
     }
 }
