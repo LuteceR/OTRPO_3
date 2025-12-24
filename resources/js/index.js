@@ -1,7 +1,6 @@
 // import style from './style.scss';
 // import * as styles from "./bootstrap/scss/bootstrap.scss";
 
-import '../sass/style.scss';
 import bootstrap from '~bootstrap/dist/js/bootstrap.bundle.min.js';
 import $ from '~jquery/dist/jquery.js';
 // import '~node_modules/bootstrap/scss/bootstrap.scss';
@@ -329,7 +328,7 @@ $(document).ready(function() {
         $('#cardModal').show();
     });
 
-    $(".card").on("click", function(event) {
+    $(".card-btn-zone").on("click", function(event) {
         window.location.replace(`/character-cards/${this.id}`);
     })
 });
