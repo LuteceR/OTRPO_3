@@ -22,18 +22,23 @@
 
 
 @section('characterCards')
-<div class="row justify-content-center">
+
     @foreach ($cards as $card)
-        <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-xlsm">
-            <div class='card'>
-                <div id='{{ $card->id }}' class='card-btn-zone'>
+        @if ($loop->iteration % 4 == 0 or $loop->iteration == 1)
+        @if (! $loop->first)
+            </div>
+        @endif
+        <div class="row justify-content-center">
+            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-xlsm">
+            <div id='{{ $card->id }}' class='card'>
+                    <div id='{{ $card->id }}' class='card-btn-zone'>
                     <img class = 'card-img-top img-fluid' src='/images/{{ $card->img_url  }}' />
                     <div class='card-body'>
                         <span class='name'>{{ $card->name }}</span>
                         <span class='card-text'>{{ $card->tiny_desc }}</span>
                     </div>
-                </div>
-
+                    </div>
+                
                 <div class="button-group">
                     <!-- Кнопка комментариев -->
                     <a href="{{ route('card-comments.index', $card->id) }}" class="btn-comments">
@@ -44,8 +49,10 @@
                 <div>
                     <span>Создал: </span><span class="creator">{{ $card->user->name ?? 'Неизвестно' }}</span>
                 </div>
+                <div>
             </div>
         </div>
+</div>
     @else
 
     <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-xlsm">
@@ -55,7 +62,7 @@
                     <span class='name'>{{ $card->name }}</span>
                     <span class='card-text'>{{ $card->tiny_desc }}</span>
                 </div>
-            <div>
+            
 
             <div class="button-group">
                 <!-- Кнопка комментариев -->
@@ -67,8 +74,10 @@
             <div>
                 <span>Создал: </span><span class="creator">{{ $card->user->name ?? 'Неизвестно' }}</span>
             </div>
+            <div>
         </div>
     </div>
+</div>
         
         @endif
     @endforeach

@@ -51,13 +51,11 @@
         <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
         <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
     </div>
-    
-    <div class="container-fluid d-flex">
-
-            @yield('characterCards')
 
     <div class="container-fluid d-flex">
+
         @yield('characterCards')
+
     </div>
 
         <!-- <div id="contextmenu" class="contextmenu"><div id="button-edit">Редактировать карточку</div><div id="button-del">Удалить карточку</div></div> -->

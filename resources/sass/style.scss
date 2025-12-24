@@ -582,11 +582,14 @@ input.checkBox {
     }
 }
 
-.card {
-    height: 750px !important;
-}
+// .card {
+//     height: auto !important;
+// }
 
 .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
     justify-content: center;
     margin: 0;
     width: 100%;
@@ -599,7 +602,7 @@ input.checkBox {
     // border: solid $main-color2;
     margin: 1rem;
     padding: 1rem;
-    // height: 123rem;
+    height: 90%;
     width: 30vh;
     //width: calc($width/3);
     
