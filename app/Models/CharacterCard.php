@@ -17,7 +17,6 @@ class CharacterCard extends Model
         'name',
         'img_url',
         'tiny_desc',
-        'long_desc',
         'created_at',
         'updated_at',
     ];
@@ -78,5 +77,11 @@ class CharacterCard extends Model
         }
 
         return null;
+    }
+
+
+    public function card_comments()
+    {
+        return $this->hasMany(CardComment::class);
     }
 }

@@ -9,7 +9,7 @@
         <h5 class="modal-title" id="exampleModalLabel">{{ $card->name }}</h5>
       </div>
       <div class="modal-body">
-        {!! $card->long_desc !!}
+          {!! $card->long_desc !!}
       </div>
     </div>
   </div>

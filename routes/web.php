@@ -4,6 +4,7 @@ use app\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\blahController;
 use App\Http\Controllers\CharacterCardController;
+use App\Http\Controllers\CardCommentController;
 
 
 /*
@@ -19,7 +20,7 @@ use App\Http\Controllers\CharacterCardController;
 
 
 Route::get('/character-cards/deleted',
-[CharacterCardController::class, 'deleted'])->name('character-cards.deleted');
+    [CharacterCardController::class, 'deleted'])->name('character-cards.deleted');
 
 Route::patch(
     '/character-cards/{id}/restore',
@@ -27,3 +28,7 @@ Route::patch(
     )->name('character-cards.restore');
 
 Route::resource('character-cards', CharacterCardController::class);
+
+Route::get('character-cards/{id}/comments', [CardCommentController::class, 'index'])->name('card-comments.index');
+Route::get('character-cards/{id}/comments/create', [CardCommentController::class, 'create'])->name('card-comments.create');
+Route::post('character-cards/{id}/comments', [CardCommentController::class, 'store'])->name('card-comments.store');

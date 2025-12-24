@@ -40,17 +40,17 @@
         </div>
     </div>
 
+    <div class="nav navbar navbar-expand-lg">
+        <div class="navbar-brand logo">
+            <img src="/icons/favicon.ico" alt="logo">
+        </div>
+        <div class="web-name">Death Stranding</div>
+        <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
+        <button id="liveToastBtn" type="button" class="btn btn-primary">Скачать</button>
+    </div>
+
     <div class="container-fluid d-flex">
-        <div class="nav navbar navbar-expand-lg">
-            <div class="navbar-brand logo">
-                <img src="icons/favicon.ico" alt="logo">
-            </div>
-            <div class="web-name">Death Stranding</div>
-            <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
-            <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
-
-            @yield('characterCards')
-
+        @yield('characterCards')
     </div>
 
         <!-- <div id="contextmenu" class="contextmenu"><div id="button-edit">Редактировать карточку</div><div id="button-del">Удалить карточку</div></div> -->
@@ -70,13 +70,11 @@
     </div>
 
     <footer>
-            <img src="icons/github-logo.jpg" alt="github logo" class="github-logo">
+            <img src="/icons/github-logo.jpg" alt="github logo" class="github-logo">
             <span>Данилова Анна Петровна</span>
-            <div class="github-href"><a href="https://github.com/LuteceR"><img src="icons/github.svg" alt="github"></a></div>
-            <div class="yandex-href"><a href="https://mail.360.yandex.ru"><img src="icons/yandex.svg" alt="yandex"></a></div>
+            <div class="github-href"><a href="https://github.com/LuteceR"><img src="/icons/github.svg" alt="github"></a></div>
+            <div class="yandex-href"><a href="https://mail.360.yandex.ru"><img src="/icons/yandex.svg" alt="yandex"></a></div>
     </footer>
-
-    <!-- @Vite(['resources/sass/style.scss', 'resources/js/index.js']) -->
     
     <!-- jQuery -->
     <script src="{{ asset('~jquery') }}"></script>
