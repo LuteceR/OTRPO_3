@@ -42,7 +42,7 @@
 
     <div class="nav navbar navbar-expand-lg">
         <div class="navbar-brand logo">
-            <img src="icons/favicon.ico" alt="logo">
+            <img src="/icons/favicon.ico" alt="logo">
         </div>
         <div class="web-name">Death Stranding</div>
         

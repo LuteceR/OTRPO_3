@@ -602,8 +602,9 @@ input.checkBox {
     // border: solid $main-color2;
     margin: 1rem;
     padding: 1rem;
-    height: 90%;
+    min-height: 50rem;
     width: 30vh;
+
     //width: calc($width/3);
     
     // $chosen-color: nth($game-UI-colors, random(length($game-UI-colors)));
@@ -618,7 +619,9 @@ input.checkBox {
     //         box-shadow: 8px 5px 1px rgba($chosen-color, 0.2);
     //     }
     // }
-    .card-btn--zone {
+
+
+    .card-btn-zone {
         cursor: pointer;
     }
 
@@ -651,7 +654,7 @@ input.checkBox {
 
     .button-group {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         margin: auto 10px 10px 10px;
 
         .btn-comments {
