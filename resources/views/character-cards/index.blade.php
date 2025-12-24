@@ -40,9 +40,7 @@
                         <img class='img-fluid' src='/icons/comments.png'/>
                     </a>
                 </div>
-            </div>
-        </div>
-                    </div>
+
                 <div>
                     <span>Создал: </span><span class="creator">{{ $card->user->name ?? 'Неизвестно' }}</span>
                 </div>
@@ -57,6 +55,15 @@
                     <span class='name'>{{ $card->name }}</span>
                     <span class='card-text'>{{ $card->tiny_desc }}</span>
                 </div>
+            <div>
+
+            <div class="button-group">
+                <!-- Кнопка комментариев -->
+                <a href="{{ route('card-comments.index', $card->id) }}" class="btn-comments">
+                    <img class='img-fluid' src='/icons/comments.png'/>
+                </a>
+            </div>
+                
             <div>
                 <span>Создал: </span><span class="creator">{{ $card->user->name ?? 'Неизвестно' }}</span>
             </div>
