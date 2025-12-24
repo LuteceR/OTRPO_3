@@ -13,6 +13,5 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-package.json
 composer.json
 package-lock.json
