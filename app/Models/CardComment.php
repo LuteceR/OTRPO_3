@@ -21,4 +21,8 @@ class CardComment extends Model
         return $this->belongsTo(CharacterCard::class);
         return $this->belongsTo(User::class);
     }
+
+    public function getUserOfComment() {
+        return User::findOrFail($this->user_id)->name;
+    }
 }

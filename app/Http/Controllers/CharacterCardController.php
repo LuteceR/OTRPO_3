@@ -193,10 +193,10 @@ class CharacterCardController extends Controller
         $remember = $request->filled('remember');
 
         $request->session()->put('login', $loginInput);
-        $request->session()->put('is_admin', Auth::user()->is_admin);
-
+        
         // Попытка авторизации
         if (Auth::attempt($credentials, $remember)) {
+            $request->session()->put('is_admin', Auth::user()->is_admin);
             $request->session()->regenerate();
             return redirect()->route('character-cards.index'); // редирект после успешного логина
         }

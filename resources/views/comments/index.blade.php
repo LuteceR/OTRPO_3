@@ -1,4 +1,25 @@
 @extends('character-cards.main')
+
+@section('userName')
+
+<div class="user">
+    @if ($isAdmin) 
+        <span class="userName">🔑 {{ $login }}</span>
+    @else 
+        <span class="userName">{{ $login }}</span>
+    @endif
+
+<script>
+    const user = @json(Auth::user());
+    // $card = CharacterCard::find(1);
+
+    // $username = $card->user->name;
+</script>
+
+</div>
+
+@endsection
+
 @section('characterCards')
 
 <div class="row justify-content-center comments-section">
@@ -13,9 +34,11 @@
     <div class="comments-list">
         @foreach ($comments as $comment)
             <div class="comment">
-                <span class="comment-user">{{ $comment->user->name }}</span>
+                <span class="comment-user">{{ $comment->getUserOfComment() }}</span>
+                <span class="created-at">{{ $comment->created_at }}</span>
                 <p class="comment-text">{{ $comment->comment }}</p>
             </div>
+            <hr>
         @endforeach
     </div>
 </div>

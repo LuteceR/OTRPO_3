@@ -46,4 +46,31 @@ class User extends Authenticatable
     {
         return $this->hasMany(CardComment::class);
     }
+
+    static public function getUserIdByName($username)
+    {
+        // Находим пользователя по имени
+        $user = User::where('name', $username)->first();
+
+        if ($user) {
+            return $user->id;
+        }
+
+        return null;
+    }
+
+    public function friends()
+	{
+		return $this->belongsToMany(User::class, 'friends_users', 'user_id', 'friend_id');
+	}
+
+	public function addFriend(User $user)
+	{
+		$this->friends()->attach($user->id);
+	}
+
+	public function removeFriend(User $user)
+	{
+		$this->friends()->detach($user->id);
+	}
 }

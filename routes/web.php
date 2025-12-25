@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\blahController;
 use App\Http\Controllers\CharacterCardController;
 use App\Http\Controllers\CardCommentController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -29,9 +30,16 @@ Route::patch(
 
 Route::resource('character-cards', CharacterCardController::class);
 
-Route::get('character-cards/{id}/comments', [CardCommentController::class, 'index'])->name('card-comments.index');
-Route::get('character-cards/{id}/comments/create', [CardCommentController::class, 'create'])->name('card-comments.create');
-Route::post('character-cards/{id}/comments', [CardCommentController::class, 'store'])->name('card-comments.store');
+// комментарии
+Route::get('/character-cards/{id}/comments', [CardCommentController::class, 'index'])->name('card-comments.index');
+Route::get('/character-cards/{id}/comments/create', [CardCommentController::class, 'create'])->name('card-comments.create');
+Route::post('/character-cards/{id}/comments', [CardCommentController::class, 'store'])->name('card-comments.store');
+
+// лента друзей & список юзеров
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::post('/dashboard/add-friend/{id}', [DashboardController::class, 'store'])->name('friend.store');
+Route::post('/dashboard/remove-friend/{id}', [DashboardController::class, 'destroy'])->name('friend.destroy');
+
 Route::get('/', [CharacterCardController::class, 'login']);
 
 Route::post('/', [CharacterCardController::class, 'tryAuth'])->name('tryAuth');

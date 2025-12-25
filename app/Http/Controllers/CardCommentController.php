@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CharacterCard;
 use App\Models\CardComment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -16,10 +17,13 @@ class CardCommentController extends Controller
      */
     public function index($card_id)
     {
+        $login = session('login');
+        $isAdmin = session('is_admin');
+
         $card = CharacterCard::findOrFail($card_id);
         $comments = $card->card_comments;
 
-        return view('comments.index', compact('card', 'comments'));
+        return view('comments.index', compact('card', 'comments', 'login', 'isAdmin'));
     }
 
     /**
@@ -29,8 +33,11 @@ class CardCommentController extends Controller
      */
     public function create($card_id)
     {
+        $login = session('login');
+        $isAdmin = session('is_admin');
+
         $card = CharacterCard::findOrFail($card_id);
-        return view('comments.create', compact('card'));
+        return view('comments.create', compact('card', 'login', 'isAdmin'));
     }
 
     /**
@@ -42,13 +49,17 @@ class CardCommentController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'user_id' => 'required|string|integer',
+            'username' => 'required|string',
             'character_card_id' => 'required|integer',
             'comment' => 'required|string|max:1000',
         ]);
+        $data = ['user_id' => User::getUserIdByName($validated['username']),
+                'character_card_id' => $validated['character_card_id'],
+                'comment' => $validated['comment'],
+        ];
 
-        CardComment::create($validated);
-        $card_id = $validated['character_card_id'];
+        CardComment::create($data);
+        $card_id = $data['character_card_id'];
         return redirect()->route('card-comments.index', $card_id);
     }
 
