@@ -67,10 +67,18 @@ class User extends Authenticatable
 	public function addFriend(User $user)
 	{
 		$this->friends()->attach($user->id);
+		$user->friends()->attach($this->id);
 	}
+
+    public function isFriend($username)
+    {
+        $user_id = User::getUserIdByName($username);
+        return $this->friends()->where('friend_id', $user_id)->exists();
+    }
 
 	public function removeFriend(User $user)
 	{
 		$this->friends()->detach($user->id);
+		$user->friends()->detach($this->id);
 	}
 }

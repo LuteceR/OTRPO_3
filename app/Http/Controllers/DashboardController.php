@@ -11,15 +11,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $login = session('login');
-        $isAdmin = session('is_admin');
         $not_friends = User::where('id', '!=', Auth::user()->id);
         if (Auth::user()->friends->count()) {
             $not_friends->whereNotIn('id', Auth::user()->friends->modelKeys());
         }
         $not_friends = $not_friends->get();
 
-        return view('dashboard.index', compact('not_friends', 'login', 'isAdmin'));
+        return view('dashboard.index', compact('not_friends'));
     }
 
     public function store($id)

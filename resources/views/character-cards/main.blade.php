@@ -46,24 +46,24 @@
         </div>
         <div class="web-name">Death Stranding</div>
         
-        <div class="user">
-            <script>
-                const user = @json(Auth::user());
-                const username = user.name;
-                const isAdmin = user.is_admin;
+        @php
+            $user = Auth::user();
+        @endphp
+        @if ($user) 
+            <a class="user" href="dashboard">
+                <!-- имеет серай стиль из-за .scss: .nav {a { } }  -->
+                @php
+                    $username = Auth::user()->name;
+                    $isAdmin = Auth::user()->is_admin;
+                @endphp
 
-                const userNameElement = document.createElement('span');
-                userNameElement.className = 'userName';
-                userNameElement.textContent = username;
-
-                if (isAdmin) {
-                    userNameElement.innerHTML = '🔑 ' + username;
-                }
-
-                document.querySelector('.user').appendChild(userNameElement);
-            </script>
-        </div>
-        
+                @if ($isAdmin) 
+                    <span class="userName">🔑 {{ $username }}</span>
+                @else 
+                    <span class="userName">{{ $username }}</span>
+                @endif
+            </a>
+        @endif
         <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
         <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
     </div>
