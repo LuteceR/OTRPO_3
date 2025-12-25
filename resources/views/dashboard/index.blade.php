@@ -2,13 +2,14 @@
 
 @section('characterCards')
 <div class="row justify-content-center comments-section">
-  <h2 class="subheader">Друзья</h2>
+  <a class="feed-btn" href="/dashboard/feed">Свежие записи друзей </a>
+
+  <h3 class="subheader">Друзья</h3>
   <table style="width:100%;">
     <thead>
       <tr>
         <th>Имя</th>
         <th>Почта</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -26,15 +27,12 @@
     </tbody>
   </table>
 
-  <br>
-
-  <h2 class="subheader">Другие пользователи</h2>
+  <h3 class="subheader">Другие пользователи</h3>
   <table style="width:100%;">
     <thead>
       <tr>
         <th>Имя</th>
         <th>Почта</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>

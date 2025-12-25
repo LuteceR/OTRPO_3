@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/ico" href="icons/favicon.ico">
+    @Vite(['resources/sass/style.scss', 'resources/js/index.js'])
 </head>
 <body>
     
@@ -41,17 +42,19 @@
     </div>
 
     <div class="nav navbar navbar-expand-lg">
-        <div class="navbar-brand logo">
-            <img src="/icons/favicon.ico" alt="logo">
-        </div>
-        <div class="web-name">Death Stranding</div>
-        
+        <a class='home-link' href='/character-cards'>
+            <div class="navbar-brand logo">
+                <img src="/icons/favicon.ico" alt="logo">
+            </div>
+            <div class="web-name">
+                Death Stranding
+            </div>
+        </a>
         @php
             $user = Auth::user();
         @endphp
         @if ($user) 
             <a class="user" href="dashboard">
-                <!-- имеет серай стиль из-за .scss: .nav {a { } }  -->
                 @php
                     $username = Auth::user()->name;
                     $isAdmin = Auth::user()->is_admin;
@@ -64,8 +67,8 @@
                 @endif
             </a>
         @endif
-        <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
-        <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
+        <a href="{{ route('character-cards.deleted') }}" class='deleted-cards'>Удалённые карточки</a>
+        <button id="liveToastBtn" type="button" class="btn btn-primary">Cкачать</button>
     </div>
 
     <div class="container-fluid d-flex">
@@ -102,7 +105,7 @@
     <!-- BS JavaScript -->
     <script src="{{ asset('~bootstrap') }}"></script>
 
-    @Vite(['resources/sass/style.scss', 'resources/js/index.js'])
+
     
 </body>
 </htmlh>

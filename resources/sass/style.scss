@@ -444,9 +444,28 @@ input.checkBox {
     } 
 }
 
+@mixin neon-text {
+  text-shadow:
+    0 0 0.3rem #fff,
+    0 0 2rem $main-color1,
+}
+
 .btn {
     // margin-left: auto;
     margin-right: 3rem;
+}
+
+.feed-btn {
+    background-color: $main-color1;
+    padding: 10px 20px;
+    font-family: $font;
+    border: none;
+    border-radius: 3px;
+    align-self: center;
+    @include neon-text;
+    text-decoration: none;
+    color: black;
+
 }
 
 .toast-header {
@@ -485,12 +504,6 @@ input.checkBox {
     // rgba($main-color2, 0.7));
 }
 
-@mixin neon-text {
-  text-shadow:
-    0 0 0.3rem #fff,
-    0 0 2rem $main-color1,
-}
-
 .bttn {
     display: flex;
     margin: auto;
@@ -506,10 +519,18 @@ input.checkBox {
 }
 
 .user {
-    display: flex;
     font-size: 1.2rem;
     margin-left: 2rem;
     font-weight: 500;
+    background-color: gray;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-family: $font;
+    display: inline-block;
+    margin-left: auto;
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+
 
     .userName {
         align-self: center;
@@ -518,7 +539,7 @@ input.checkBox {
 }
 
 .nav {
-    a {
+    .deleted-cards {
         display: inline-block;
         margin-left: auto;
         text-decoration: none;
@@ -541,10 +562,14 @@ input.checkBox {
     border-bottom: 0.3rem solid rgba($main-color2, 0.3);
     background-color: $main-color4;
 
+    .home-link {
+        display: flex;
+        text-decoration: none;
+    }
+
     .logo {
     display: flex;
     margin-left: 3rem;
-
         img {
             max-height: 50px;
             max-width: 40px;
@@ -780,11 +805,10 @@ footer {
                 margin-top: 5px;
                 color: #555;
             }
-        }
 
-        .friend-comment {
-            color: #123620;
-            font-weight: bold;
+            .friend-comment {
+                color: rgb(0, 129, 54);
+            }
         }
     }
 

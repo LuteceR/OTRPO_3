@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\CardComment;
 
 
 use Illuminate\Http\Request;
@@ -32,5 +33,16 @@ class DashboardController extends Controller
         $user = User::find($id);
         Auth::user()->removeFriend($user);
         return redirect()->back();
+    }
+
+    public function feed()
+    {
+        $user = Auth::user();
+        $friendIds = $user->friends()->pluck('id');
+
+        $comments = CardComment::whereIn('user_id', $friendIds)
+            ->orderBy('created_at', 'desc')->get();
+
+        return view('dashboard.feed', compact('comments'));
     }
 }

@@ -70,9 +70,8 @@ class User extends Authenticatable
 		$user->friends()->attach($this->id);
 	}
 
-    public function isFriend($username)
+    public function isFriend($user_id)
     {
-        $user_id = User::getUserIdByName($username);
         return $this->friends()->where('friend_id', $user_id)->exists();
     }
 
