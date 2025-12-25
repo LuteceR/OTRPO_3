@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\CharacterCard;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Events\CardDeleting;
 
 class CharacterCardController extends Controller
 {
@@ -138,6 +140,17 @@ class CharacterCardController extends Controller
      */
     public function destroy(CharacterCard $characterCard)
     {
+
+        event(new CardDeleting($characterCard));
+
+        // // проверка через Gate
+        // if (Gate::denies('delete-card', $characterCard)) {
+        //     return response()->json([
+        //         'success' => false,
+        //         'message' => 'Нет прав на удаление'
+        //     ], 403);
+        // }
+
         $characterCard->delete();
 
         return redirect()

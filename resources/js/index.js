@@ -196,18 +196,27 @@ $(document).ready(function() {
     
                 btnDel.addEventListener("click", function(event) {
                     contextmenu.remove();
-    
+
                     if (confirm(`Вы уверены?`)) {
                         fetch(`character-cards/${obj.id}`, {
-                            method: "DELETE",
+                            method: "POST",
                             headers: {
+                                'Content-Type': 'application/json',
                                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                            },
+                            body: JSON.stringify({
+                                _method: 'DELETE'
+                            })
+                        }).then(response => {
+                            if (response.ok) {
+                                window.location.replace('/character-cards');
+                            } else {
+                                alert('Ошибка при удалении карточки!');
                             }
-                        }).then(() => {
-                            window.location.replace('character-cards');
-                        })
+                        });
                     }
                 });
+
     
                 
                 contextmenu.appendChild(btnDel);

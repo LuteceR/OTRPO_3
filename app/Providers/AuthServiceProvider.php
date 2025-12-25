@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Models\CharacterCard;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,14 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+
+                $this->registerPolicies();
+
+        // Gate для удаления карточки
+        Gate::define('delete-card', function ($user, CharacterCard $card) {
+            // Можно удалять только если админ или владелец карточки
+            return $user->is_admin || $user->id === $card->user_id;
+        });
 
         //
     }

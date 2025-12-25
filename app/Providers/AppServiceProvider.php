@@ -35,6 +35,6 @@ class AppServiceProvider extends ServiceProvider
         //         ->middleware('api')
         //         ->group(base_path('routes/api.php'));
         // });
-    }
 
+    }
 }

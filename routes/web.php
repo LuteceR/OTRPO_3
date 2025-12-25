@@ -30,6 +30,17 @@ Route::patch(
 
 Route::resource('character-cards', CharacterCardController::class);
 
+Route::delete('character-cards/{characterCard}', function (CharacterCard $characterCard) {
+    $user = Auth::user();
+
+    if ($user->is_admin || $characterCard->user_id === $user->id) {
+        $characterCard->delete();
+        return response()->json(['success' => true]);
+    }
+
+    return response()->json(['success' => false, 'message' => 'Нет прав на удаление'], 403);
+})->middleware('auth');
+
 // комментарии
 Route::get('/character-cards/{id}/comments', [CardCommentController::class, 'index'])->name('card-comments.index');
 Route::get('/character-cards/{id}/comments/create', [CardCommentController::class, 'create'])->name('card-comments.create');
