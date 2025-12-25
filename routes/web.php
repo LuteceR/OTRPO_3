@@ -39,6 +39,7 @@ Route::post('/character-cards/{id}/comments', [CardCommentController::class, 'st
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::post('/dashboard/add-friend/{id}', [DashboardController::class, 'store'])->name('friend.store');
 Route::post('/dashboard/remove-friend/{id}', [DashboardController::class, 'destroy'])->name('friend.destroy');
+Route::get('/dashboard/feed', [DashboardController::class, 'feed'])->name('feed');
 
 Route::get('/', [CharacterCardController::class, 'login']);
 

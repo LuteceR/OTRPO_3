@@ -22,7 +22,11 @@ class CardComment extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getUserOfComment() {
+    public function getUser() {
         return User::findOrFail($this->user_id)->name;
+    }
+
+    public function getCardName() {
+        return CharacterCard::findOrFail($this->character_card_id)->name;
     }
 }
