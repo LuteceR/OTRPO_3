@@ -1,25 +1,5 @@
 @extends('character-cards.main')
 
-@section('userName')
-
-<div class="user">
-    @if ($isAdmin) 
-        <span class="userName">🔑 {{ $login }}</span>
-    @else 
-        <span class="userName">{{ $login }}</span>
-    @endif
-
-<script>
-    const user = @json(Auth::user());
-    // $card = CharacterCard::find(1);
-
-    // $username = $card->user->name;
-</script>
-
-</div>
-
-@endsection
-
 @section('characterCards')
 
 <div class="row justify-content-center comments-section">

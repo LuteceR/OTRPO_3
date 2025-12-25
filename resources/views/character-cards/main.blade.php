@@ -46,7 +46,23 @@
         </div>
         <div class="web-name">Death Stranding</div>
         
-        @yield('userName')
+        <div class="user">
+            <script>
+                const user = @json(Auth::user());
+                const username = user.name;
+                const isAdmin = user.is_admin;
+
+                const userNameElement = document.createElement('span');
+                userNameElement.className = 'userName';
+                userNameElement.textContent = username;
+
+                if (isAdmin) {
+                    userNameElement.innerHTML = '🔑 ' + username;
+                }
+
+                document.querySelector('.user').appendChild(userNameElement);
+            </script>
+        </div>
         
         <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
         <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
