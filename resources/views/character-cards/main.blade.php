@@ -69,8 +69,6 @@
         @endif
         <a href="{{ route('character-cards.deleted') }}" class='deleted-cards'>Удалённые карточки</a>
         <button id="liveToastBtn" type="button" class="btn btn-primary">Cкачать</button>
-        <a href="{{ route('character-cards.deleted') }}">Удалённые карточки</a>
-        <button id="liveToastBtn" type="button" class="btn btn-primary">скачать</button>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button id='logout' class="btn" type="submit">Выйти</button>
