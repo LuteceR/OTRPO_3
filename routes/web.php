@@ -44,6 +44,14 @@ Route::get('/', [CharacterCardController::class, 'login']);
 
 Route::post('/', [CharacterCardController::class, 'tryAuth'])->name('tryAuth');
 
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect('/');
+})->name('logout');
+
 Route::get('/registr', [CharacterCardController::class, 'registr'])->name('registr');
 
 Route::post('/registr', [CharacterCardController::class, 'tryRegistr'])->name('tryRegistr');

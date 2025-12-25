@@ -595,6 +595,13 @@ input.checkBox {
     width: 100%;
 }
 
+#logout {
+
+    &:hover {
+        background-color: rgba(#2c3c54, 0.1);
+    }
+}
+
 .card {
     // display: flex;
     // flex-direction: column;

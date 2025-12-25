@@ -163,11 +163,16 @@ class CharacterCardController extends Controller
 
     public function login()
     {
+        if (auth()->check()) {
+            return redirect()->route('character-cards.index');
+        }
+
         return view('login');
     }
 
     public function tryAuth(Request $request) 
     {
+
         $request->validate([
                 'login'    => 'required|string',
                 'password' => 'required|string',
