@@ -12120,6 +12120,8 @@ body {
 #contextmenu #button-add {
   display: flex;
   height: 2.8rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
   border-top-right-radius: 0.3rem;
   border-top-left-radius: 0.3rem;
   width: 100%;
@@ -12184,26 +12186,35 @@ input.checkBox:checked:after {
   margin: 1rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .table div form {
-  width: 100%;
+  display: flex;
+  width: auto;
+  justify-items: end;
+}
+.table div form:first-of-type {
+  margin-left: auto;
+  margin-right: 1rem;
 }
 .table div button {
   display: flex;
   height: auto !important;
   margin-left: auto !important;
-  margin-right: 4rem;
 }
 .table div input, .table div button {
   background-color: rgba(156, 204, 255, 0.8);
   border-style: double;
+  margin-left: auto;
   border: solid rgba(92, 112, 142, 0.6) 1px;
   outline: solid rgba(156, 204, 255, 0.8) 1px;
   border-radius: 0.3rem;
   border-radius: 0.3rem;
-  align-self: center;
-  margin-left: auto;
+  font-size: 0.9rem;
   height: 1.6rem;
+}
+.table div input:hover, .table div button:hover {
+  background-color: rgba(156, 204, 255, 0.6);
 }
 .table .attrName {
   font-family: "Montserrat";
@@ -12277,6 +12288,18 @@ input.checkBox:checked:after {
   margin-right: 3rem;
 }
 
+.feed-btn {
+  background-color: #54a8fc;
+  padding: 10px 20px;
+  font-family: "Montserrat";
+  border: none;
+  border-radius: 3px;
+  align-self: center;
+  text-shadow: 0 0 0.3rem #fff, 0 0 2rem #54a8fc;
+  text-decoration: none;
+  color: black;
+}
+
 .toast-header {
   background-color: #2c445c;
   color: #8cc3fc;
@@ -12315,32 +12338,54 @@ input.checkBox:checked:after {
   transition: background-color 0.3s ease;
   border: none;
   border-radius: 3px;
-  background-color: #5c708e;
+  margin-bottom: 1rem;
   align-self: center;
+}
+.bttn:hover {
+  background-color: rgba(44, 60, 84, 0.1);
 }
 
 .user {
-  display: flex;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-left: 2rem;
+  width: auto;
   font-weight: 500;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-family: "Montserrat";
+  display: inline-block;
+  margin-left: auto;
+  text-decoration: none;
+  color: rgb(32, 32, 32);
 }
 .user .userName {
+  background-color: none;
   align-self: center;
   justify-self: end;
 }
+.user:hover {
+  background-color: rgba(44, 60, 84, 0.1);
+}
 
-.nav a {
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav .deleted-cards {
   display: inline-block;
   margin-left: auto;
   text-decoration: none;
   padding: 10px 20px;
   font-family: "Montserrat";
+  width: -moz-fit-content;
+  width: fit-content;
   color: rgb(32, 32, 32);
   transition: background-color 0.3s ease;
   border: none;
   border-radius: 3px;
-  background-color: gray;
+}
+.nav .deleted-cards:hover {
+  background-color: rgba(44, 60, 84, 0.1);
 }
 
 .navbar {
@@ -12353,6 +12398,10 @@ input.checkBox:checked:after {
   border-bottom: 0.3rem solid rgba(140, 195, 252, 0.3);
   background-color: #5c708e;
 }
+.navbar .home-link {
+  display: flex;
+  text-decoration: none;
+}
 .navbar .logo {
   display: flex;
   margin-left: 3rem;
@@ -12362,9 +12411,11 @@ input.checkBox:checked:after {
   max-width: 40px;
 }
 .navbar .web-name {
+  display: flex;
+  align-items: center;
   width: auto;
   margin-left: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #2c445c;
   font-family: "Montserrat";
@@ -12375,176 +12426,176 @@ input.checkBox:checked:after {
   width: 100%;
 }
 .container-fluid :nth-child(0) :nth-child(0) .card, .container-sm :nth-child(0) :nth-child(0) .card, .container-md :nth-child(0) :nth-child(0) .card, .container-lg :nth-child(0) :nth-child(0) .card, .container-xl :nth-child(0) :nth-child(0) .card, .container-xxl :nth-child(0) :nth-child(0) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(0) :nth-child(1) .card, .container-sm :nth-child(0) :nth-child(1) .card, .container-md :nth-child(0) :nth-child(1) .card, .container-lg :nth-child(0) :nth-child(1) .card, .container-xl :nth-child(0) :nth-child(1) .card, .container-xxl :nth-child(0) :nth-child(1) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(0) :nth-child(2) .card, .container-sm :nth-child(0) :nth-child(2) .card, .container-md :nth-child(0) :nth-child(2) .card, .container-lg :nth-child(0) :nth-child(2) .card, .container-xl :nth-child(0) :nth-child(2) .card, .container-xxl :nth-child(0) :nth-child(2) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(0) :nth-child(3) .card, .container-sm :nth-child(0) :nth-child(3) .card, .container-md :nth-child(0) :nth-child(3) .card, .container-lg :nth-child(0) :nth-child(3) .card, .container-xl :nth-child(0) :nth-child(3) .card, .container-xxl :nth-child(0) :nth-child(3) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(4) .card, .container-sm :nth-child(0) :nth-child(4) .card, .container-md :nth-child(0) :nth-child(4) .card, .container-lg :nth-child(0) :nth-child(4) .card, .container-xl :nth-child(0) :nth-child(4) .card, .container-xxl :nth-child(0) :nth-child(4) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(5) .card, .container-sm :nth-child(0) :nth-child(5) .card, .container-md :nth-child(0) :nth-child(5) .card, .container-lg :nth-child(0) :nth-child(5) .card, .container-xl :nth-child(0) :nth-child(5) .card, .container-xxl :nth-child(0) :nth-child(5) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(6) .card, .container-sm :nth-child(0) :nth-child(6) .card, .container-md :nth-child(0) :nth-child(6) .card, .container-lg :nth-child(0) :nth-child(6) .card, .container-xl :nth-child(0) :nth-child(6) .card, .container-xxl :nth-child(0) :nth-child(6) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(7) .card, .container-sm :nth-child(0) :nth-child(7) .card, .container-md :nth-child(0) :nth-child(7) .card, .container-lg :nth-child(0) :nth-child(7) .card, .container-xl :nth-child(0) :nth-child(7) .card, .container-xxl :nth-child(0) :nth-child(7) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(8) .card, .container-sm :nth-child(0) :nth-child(8) .card, .container-md :nth-child(0) :nth-child(8) .card, .container-lg :nth-child(0) :nth-child(8) .card, .container-xl :nth-child(0) :nth-child(8) .card, .container-xxl :nth-child(0) :nth-child(8) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(9) .card, .container-sm :nth-child(0) :nth-child(9) .card, .container-md :nth-child(0) :nth-child(9) .card, .container-lg :nth-child(0) :nth-child(9) .card, .container-xl :nth-child(0) :nth-child(9) .card, .container-xxl :nth-child(0) :nth-child(9) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(10) .card, .container-sm :nth-child(0) :nth-child(10) .card, .container-md :nth-child(0) :nth-child(10) .card, .container-lg :nth-child(0) :nth-child(10) .card, .container-xl :nth-child(0) :nth-child(10) .card, .container-xxl :nth-child(0) :nth-child(10) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
-.container-fluid :nth-child(0) :nth-child(11) .card, .container-sm :nth-child(0) :nth-child(11) .card, .container-md :nth-child(0) :nth-child(11) .card, .container-lg :nth-child(0) :nth-child(11) .card, .container-xl :nth-child(0) :nth-child(11) .card, .container-xxl :nth-child(0) :nth-child(11) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(0) :nth-child(12) .card, .container-sm :nth-child(0) :nth-child(12) .card, .container-md :nth-child(0) :nth-child(12) .card, .container-lg :nth-child(0) :nth-child(12) .card, .container-xl :nth-child(0) :nth-child(12) .card, .container-xxl :nth-child(0) :nth-child(12) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
-.container-fluid :nth-child(1) :nth-child(0) .card, .container-sm :nth-child(1) :nth-child(0) .card, .container-md :nth-child(1) :nth-child(0) .card, .container-lg :nth-child(1) :nth-child(0) .card, .container-xl :nth-child(1) :nth-child(0) .card, .container-xxl :nth-child(1) :nth-child(0) .card {
+.container-fluid :nth-child(0) :nth-child(4) .card, .container-sm :nth-child(0) :nth-child(4) .card, .container-md :nth-child(0) :nth-child(4) .card, .container-lg :nth-child(0) :nth-child(4) .card, .container-xl :nth-child(0) :nth-child(4) .card, .container-xxl :nth-child(0) :nth-child(4) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
-.container-fluid :nth-child(1) :nth-child(1) .card, .container-sm :nth-child(1) :nth-child(1) .card, .container-md :nth-child(1) :nth-child(1) .card, .container-lg :nth-child(1) :nth-child(1) .card, .container-xl :nth-child(1) :nth-child(1) .card, .container-xxl :nth-child(1) :nth-child(1) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+.container-fluid :nth-child(0) :nth-child(5) .card, .container-sm :nth-child(0) :nth-child(5) .card, .container-md :nth-child(0) :nth-child(5) .card, .container-lg :nth-child(0) :nth-child(5) .card, .container-xl :nth-child(0) :nth-child(5) .card, .container-xxl :nth-child(0) :nth-child(5) .card {
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
-.container-fluid :nth-child(1) :nth-child(2) .card, .container-sm :nth-child(1) :nth-child(2) .card, .container-md :nth-child(1) :nth-child(2) .card, .container-lg :nth-child(1) :nth-child(2) .card, .container-xl :nth-child(1) :nth-child(2) .card, .container-xxl :nth-child(1) :nth-child(2) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
-.container-fluid :nth-child(1) :nth-child(3) .card, .container-sm :nth-child(1) :nth-child(3) .card, .container-md :nth-child(1) :nth-child(3) .card, .container-lg :nth-child(1) :nth-child(3) .card, .container-xl :nth-child(1) :nth-child(3) .card, .container-xxl :nth-child(1) :nth-child(3) .card {
+.container-fluid :nth-child(0) :nth-child(6) .card, .container-sm :nth-child(0) :nth-child(6) .card, .container-md :nth-child(0) :nth-child(6) .card, .container-lg :nth-child(0) :nth-child(6) .card, .container-xl :nth-child(0) :nth-child(6) .card, .container-xxl :nth-child(0) :nth-child(6) .card {
   background-color: rgba(182, 182, 151, 0.6);
   box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
-.container-fluid :nth-child(1) :nth-child(4) .card, .container-sm :nth-child(1) :nth-child(4) .card, .container-md :nth-child(1) :nth-child(4) .card, .container-lg :nth-child(1) :nth-child(4) .card, .container-xl :nth-child(1) :nth-child(4) .card, .container-xxl :nth-child(1) :nth-child(4) .card {
+.container-fluid :nth-child(0) :nth-child(7) .card, .container-sm :nth-child(0) :nth-child(7) .card, .container-md :nth-child(0) :nth-child(7) .card, .container-lg :nth-child(0) :nth-child(7) .card, .container-xl :nth-child(0) :nth-child(7) .card, .container-xxl :nth-child(0) :nth-child(7) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
-.container-fluid :nth-child(1) :nth-child(5) .card, .container-sm :nth-child(1) :nth-child(5) .card, .container-md :nth-child(1) :nth-child(5) .card, .container-lg :nth-child(1) :nth-child(5) .card, .container-xl :nth-child(1) :nth-child(5) .card, .container-xxl :nth-child(1) :nth-child(5) .card {
+.container-fluid :nth-child(0) :nth-child(8) .card, .container-sm :nth-child(0) :nth-child(8) .card, .container-md :nth-child(0) :nth-child(8) .card, .container-lg :nth-child(0) :nth-child(8) .card, .container-xl :nth-child(0) :nth-child(8) .card, .container-xxl :nth-child(0) :nth-child(8) .card {
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(0) :nth-child(9) .card, .container-sm :nth-child(0) :nth-child(9) .card, .container-md :nth-child(0) :nth-child(9) .card, .container-lg :nth-child(0) :nth-child(9) .card, .container-xl :nth-child(0) :nth-child(9) .card, .container-xxl :nth-child(0) :nth-child(9) .card {
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+}
+.container-fluid :nth-child(0) :nth-child(10) .card, .container-sm :nth-child(0) :nth-child(10) .card, .container-md :nth-child(0) :nth-child(10) .card, .container-lg :nth-child(0) :nth-child(10) .card, .container-xl :nth-child(0) :nth-child(10) .card, .container-xxl :nth-child(0) :nth-child(10) .card {
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(0) :nth-child(11) .card, .container-sm :nth-child(0) :nth-child(11) .card, .container-md :nth-child(0) :nth-child(11) .card, .container-lg :nth-child(0) :nth-child(11) .card, .container-xl :nth-child(0) :nth-child(11) .card, .container-xxl :nth-child(0) :nth-child(11) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
-.container-fluid :nth-child(1) :nth-child(6) .card, .container-sm :nth-child(1) :nth-child(6) .card, .container-md :nth-child(1) :nth-child(6) .card, .container-lg :nth-child(1) :nth-child(6) .card, .container-xl :nth-child(1) :nth-child(6) .card, .container-xxl :nth-child(1) :nth-child(6) .card {
+.container-fluid :nth-child(0) :nth-child(12) .card, .container-sm :nth-child(0) :nth-child(12) .card, .container-md :nth-child(0) :nth-child(12) .card, .container-lg :nth-child(0) :nth-child(12) .card, .container-xl :nth-child(0) :nth-child(12) .card, .container-xxl :nth-child(0) :nth-child(12) .card {
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+}
+.container-fluid :nth-child(1) :nth-child(0) .card, .container-sm :nth-child(1) :nth-child(0) .card, .container-md :nth-child(1) :nth-child(0) .card, .container-lg :nth-child(1) :nth-child(0) .card, .container-xl :nth-child(1) :nth-child(0) .card, .container-xxl :nth-child(1) :nth-child(0) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(1) :nth-child(1) .card, .container-sm :nth-child(1) :nth-child(1) .card, .container-md :nth-child(1) :nth-child(1) .card, .container-lg :nth-child(1) :nth-child(1) .card, .container-xl :nth-child(1) :nth-child(1) .card, .container-xxl :nth-child(1) :nth-child(1) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(1) :nth-child(2) .card, .container-sm :nth-child(1) :nth-child(2) .card, .container-md :nth-child(1) :nth-child(2) .card, .container-lg :nth-child(1) :nth-child(2) .card, .container-xl :nth-child(1) :nth-child(2) .card, .container-xxl :nth-child(1) :nth-child(2) .card {
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+}
+.container-fluid :nth-child(1) :nth-child(3) .card, .container-sm :nth-child(1) :nth-child(3) .card, .container-md :nth-child(1) :nth-child(3) .card, .container-lg :nth-child(1) :nth-child(3) .card, .container-xl :nth-child(1) :nth-child(3) .card, .container-xxl :nth-child(1) :nth-child(3) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(1) :nth-child(4) .card, .container-sm :nth-child(1) :nth-child(4) .card, .container-md :nth-child(1) :nth-child(4) .card, .container-lg :nth-child(1) :nth-child(4) .card, .container-xl :nth-child(1) :nth-child(4) .card, .container-xxl :nth-child(1) :nth-child(4) .card {
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+}
+.container-fluid :nth-child(1) :nth-child(5) .card, .container-sm :nth-child(1) :nth-child(5) .card, .container-md :nth-child(1) :nth-child(5) .card, .container-lg :nth-child(1) :nth-child(5) .card, .container-xl :nth-child(1) :nth-child(5) .card, .container-xxl :nth-child(1) :nth-child(5) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
+.container-fluid :nth-child(1) :nth-child(6) .card, .container-sm :nth-child(1) :nth-child(6) .card, .container-md :nth-child(1) :nth-child(6) .card, .container-lg :nth-child(1) :nth-child(6) .card, .container-xl :nth-child(1) :nth-child(6) .card, .container-xxl :nth-child(1) :nth-child(6) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+}
 .container-fluid :nth-child(1) :nth-child(7) .card, .container-sm :nth-child(1) :nth-child(7) .card, .container-md :nth-child(1) :nth-child(7) .card, .container-lg :nth-child(1) :nth-child(7) .card, .container-xl :nth-child(1) :nth-child(7) .card, .container-xxl :nth-child(1) :nth-child(7) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(1) :nth-child(8) .card, .container-sm :nth-child(1) :nth-child(8) .card, .container-md :nth-child(1) :nth-child(8) .card, .container-lg :nth-child(1) :nth-child(8) .card, .container-xl :nth-child(1) :nth-child(8) .card, .container-xxl :nth-child(1) :nth-child(8) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(1) :nth-child(9) .card, .container-sm :nth-child(1) :nth-child(9) .card, .container-md :nth-child(1) :nth-child(9) .card, .container-lg :nth-child(1) :nth-child(9) .card, .container-xl :nth-child(1) :nth-child(9) .card, .container-xxl :nth-child(1) :nth-child(9) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(1) :nth-child(10) .card, .container-sm :nth-child(1) :nth-child(10) .card, .container-md :nth-child(1) :nth-child(10) .card, .container-lg :nth-child(1) :nth-child(10) .card, .container-xl :nth-child(1) :nth-child(10) .card, .container-xxl :nth-child(1) :nth-child(10) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(1) :nth-child(11) .card, .container-sm :nth-child(1) :nth-child(11) .card, .container-md :nth-child(1) :nth-child(11) .card, .container-lg :nth-child(1) :nth-child(11) .card, .container-xl :nth-child(1) :nth-child(11) .card, .container-xxl :nth-child(1) :nth-child(11) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(1) :nth-child(12) .card, .container-sm :nth-child(1) :nth-child(12) .card, .container-md :nth-child(1) :nth-child(12) .card, .container-lg :nth-child(1) :nth-child(12) .card, .container-xl :nth-child(1) :nth-child(12) .card, .container-xxl :nth-child(1) :nth-child(12) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(0) .card, .container-sm :nth-child(2) :nth-child(0) .card, .container-md :nth-child(2) :nth-child(0) .card, .container-lg :nth-child(2) :nth-child(0) .card, .container-xl :nth-child(2) :nth-child(0) .card, .container-xxl :nth-child(2) :nth-child(0) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(1) .card, .container-sm :nth-child(2) :nth-child(1) .card, .container-md :nth-child(2) :nth-child(1) .card, .container-lg :nth-child(2) :nth-child(1) .card, .container-xl :nth-child(2) :nth-child(1) .card, .container-xxl :nth-child(2) :nth-child(1) .card {
   background-color: rgba(119, 131, 172, 0.6);
   box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(2) .card, .container-sm :nth-child(2) :nth-child(2) .card, .container-md :nth-child(2) :nth-child(2) .card, .container-lg :nth-child(2) :nth-child(2) .card, .container-xl :nth-child(2) :nth-child(2) .card, .container-xxl :nth-child(2) :nth-child(2) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(3) .card, .container-sm :nth-child(2) :nth-child(3) .card, .container-md :nth-child(2) :nth-child(3) .card, .container-lg :nth-child(2) :nth-child(3) .card, .container-xl :nth-child(2) :nth-child(3) .card, .container-xxl :nth-child(2) :nth-child(3) .card {
   background-color: rgba(182, 182, 151, 0.6);
   box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(4) .card, .container-sm :nth-child(2) :nth-child(4) .card, .container-md :nth-child(2) :nth-child(4) .card, .container-lg :nth-child(2) :nth-child(4) .card, .container-xl :nth-child(2) :nth-child(4) .card, .container-xxl :nth-child(2) :nth-child(4) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(5) .card, .container-sm :nth-child(2) :nth-child(5) .card, .container-md :nth-child(2) :nth-child(5) .card, .container-lg :nth-child(2) :nth-child(5) .card, .container-xl :nth-child(2) :nth-child(5) .card, .container-xxl :nth-child(2) :nth-child(5) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(6) .card, .container-sm :nth-child(2) :nth-child(6) .card, .container-md :nth-child(2) :nth-child(6) .card, .container-lg :nth-child(2) :nth-child(6) .card, .container-xl :nth-child(2) :nth-child(6) .card, .container-xxl :nth-child(2) :nth-child(6) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(7) .card, .container-sm :nth-child(2) :nth-child(7) .card, .container-md :nth-child(2) :nth-child(7) .card, .container-lg :nth-child(2) :nth-child(7) .card, .container-xl :nth-child(2) :nth-child(7) .card, .container-xxl :nth-child(2) :nth-child(7) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(8) .card, .container-sm :nth-child(2) :nth-child(8) .card, .container-md :nth-child(2) :nth-child(8) .card, .container-lg :nth-child(2) :nth-child(8) .card, .container-xl :nth-child(2) :nth-child(8) .card, .container-xxl :nth-child(2) :nth-child(8) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(9) .card, .container-sm :nth-child(2) :nth-child(9) .card, .container-md :nth-child(2) :nth-child(9) .card, .container-lg :nth-child(2) :nth-child(9) .card, .container-xl :nth-child(2) :nth-child(9) .card, .container-xxl :nth-child(2) :nth-child(9) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(10) .card, .container-sm :nth-child(2) :nth-child(10) .card, .container-md :nth-child(2) :nth-child(10) .card, .container-lg :nth-child(2) :nth-child(10) .card, .container-xl :nth-child(2) :nth-child(10) .card, .container-xxl :nth-child(2) :nth-child(10) .card {
   background-color: rgba(119, 131, 172, 0.6);
   box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(2) :nth-child(11) .card, .container-sm :nth-child(2) :nth-child(11) .card, .container-md :nth-child(2) :nth-child(11) .card, .container-lg :nth-child(2) :nth-child(11) .card, .container-xl :nth-child(2) :nth-child(11) .card, .container-xxl :nth-child(2) :nth-child(11) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(2) :nth-child(12) .card, .container-sm :nth-child(2) :nth-child(12) .card, .container-md :nth-child(2) :nth-child(12) .card, .container-lg :nth-child(2) :nth-child(12) .card, .container-xl :nth-child(2) :nth-child(12) .card, .container-xxl :nth-child(2) :nth-child(12) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
-.container-fluid :nth-child(2) :nth-child(12) .card, .container-sm :nth-child(2) :nth-child(12) .card, .container-md :nth-child(2) :nth-child(12) .card, .container-lg :nth-child(2) :nth-child(12) .card, .container-xl :nth-child(2) :nth-child(12) .card, .container-xxl :nth-child(2) :nth-child(12) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
 .container-fluid :nth-child(3) :nth-child(0) .card, .container-sm :nth-child(3) :nth-child(0) .card, .container-md :nth-child(3) :nth-child(0) .card, .container-lg :nth-child(3) :nth-child(0) .card, .container-xl :nth-child(3) :nth-child(0) .card, .container-xxl :nth-child(3) :nth-child(0) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(1) .card, .container-sm :nth-child(3) :nth-child(1) .card, .container-md :nth-child(3) :nth-child(1) .card, .container-lg :nth-child(3) :nth-child(1) .card, .container-xl :nth-child(3) :nth-child(1) .card, .container-xxl :nth-child(3) :nth-child(1) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(2) .card, .container-sm :nth-child(3) :nth-child(2) .card, .container-md :nth-child(3) :nth-child(2) .card, .container-lg :nth-child(3) :nth-child(2) .card, .container-xl :nth-child(3) :nth-child(2) .card, .container-xxl :nth-child(3) :nth-child(2) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(3) .card, .container-sm :nth-child(3) :nth-child(3) .card, .container-md :nth-child(3) :nth-child(3) .card, .container-lg :nth-child(3) :nth-child(3) .card, .container-xl :nth-child(3) :nth-child(3) .card, .container-xxl :nth-child(3) :nth-child(3) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(4) .card, .container-sm :nth-child(3) :nth-child(4) .card, .container-md :nth-child(3) :nth-child(4) .card, .container-lg :nth-child(3) :nth-child(4) .card, .container-xl :nth-child(3) :nth-child(4) .card, .container-xxl :nth-child(3) :nth-child(4) .card {
   background-color: rgba(119, 131, 172, 0.6);
@@ -12555,96 +12606,96 @@ input.checkBox:checked:after {
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(6) .card, .container-sm :nth-child(3) :nth-child(6) .card, .container-md :nth-child(3) :nth-child(6) .card, .container-lg :nth-child(3) :nth-child(6) .card, .container-xl :nth-child(3) :nth-child(6) .card, .container-xxl :nth-child(3) :nth-child(6) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(7) .card, .container-sm :nth-child(3) :nth-child(7) .card, .container-md :nth-child(3) :nth-child(7) .card, .container-lg :nth-child(3) :nth-child(7) .card, .container-xl :nth-child(3) :nth-child(7) .card, .container-xxl :nth-child(3) :nth-child(7) .card {
   background-color: rgba(182, 182, 151, 0.6);
   box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(8) .card, .container-sm :nth-child(3) :nth-child(8) .card, .container-md :nth-child(3) :nth-child(8) .card, .container-lg :nth-child(3) :nth-child(8) .card, .container-xl :nth-child(3) :nth-child(8) .card, .container-xxl :nth-child(3) :nth-child(8) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(9) .card, .container-sm :nth-child(3) :nth-child(9) .card, .container-md :nth-child(3) :nth-child(9) .card, .container-lg :nth-child(3) :nth-child(9) .card, .container-xl :nth-child(3) :nth-child(9) .card, .container-xxl :nth-child(3) :nth-child(9) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(10) .card, .container-sm :nth-child(3) :nth-child(10) .card, .container-md :nth-child(3) :nth-child(10) .card, .container-lg :nth-child(3) :nth-child(10) .card, .container-xl :nth-child(3) :nth-child(10) .card, .container-xxl :nth-child(3) :nth-child(10) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(11) .card, .container-sm :nth-child(3) :nth-child(11) .card, .container-md :nth-child(3) :nth-child(11) .card, .container-lg :nth-child(3) :nth-child(11) .card, .container-xl :nth-child(3) :nth-child(11) .card, .container-xxl :nth-child(3) :nth-child(11) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(3) :nth-child(12) .card, .container-sm :nth-child(3) :nth-child(12) .card, .container-md :nth-child(3) :nth-child(12) .card, .container-lg :nth-child(3) :nth-child(12) .card, .container-xl :nth-child(3) :nth-child(12) .card, .container-xxl :nth-child(3) :nth-child(12) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(4) :nth-child(0) .card, .container-sm :nth-child(4) :nth-child(0) .card, .container-md :nth-child(4) :nth-child(0) .card, .container-lg :nth-child(4) :nth-child(0) .card, .container-xl :nth-child(4) :nth-child(0) .card, .container-xxl :nth-child(4) :nth-child(0) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
-}
-.container-fluid :nth-child(4) :nth-child(1) .card, .container-sm :nth-child(4) :nth-child(1) .card, .container-md :nth-child(4) :nth-child(1) .card, .container-lg :nth-child(4) :nth-child(1) .card, .container-xl :nth-child(4) :nth-child(1) .card, .container-xxl :nth-child(4) :nth-child(1) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
-.container-fluid :nth-child(4) :nth-child(2) .card, .container-sm :nth-child(4) :nth-child(2) .card, .container-md :nth-child(4) :nth-child(2) .card, .container-lg :nth-child(4) :nth-child(2) .card, .container-xl :nth-child(4) :nth-child(2) .card, .container-xxl :nth-child(4) :nth-child(2) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(4) :nth-child(3) .card, .container-sm :nth-child(4) :nth-child(3) .card, .container-md :nth-child(4) :nth-child(3) .card, .container-lg :nth-child(4) :nth-child(3) .card, .container-xl :nth-child(4) :nth-child(3) .card, .container-xxl :nth-child(4) :nth-child(3) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
-.container-fluid :nth-child(4) :nth-child(4) .card, .container-sm :nth-child(4) :nth-child(4) .card, .container-md :nth-child(4) :nth-child(4) .card, .container-lg :nth-child(4) :nth-child(4) .card, .container-xl :nth-child(4) :nth-child(4) .card, .container-xxl :nth-child(4) :nth-child(4) .card {
+.container-fluid :nth-child(4) :nth-child(1) .card, .container-sm :nth-child(4) :nth-child(1) .card, .container-md :nth-child(4) :nth-child(1) .card, .container-lg :nth-child(4) :nth-child(1) .card, .container-xl :nth-child(4) :nth-child(1) .card, .container-xxl :nth-child(4) :nth-child(1) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+}
+.container-fluid :nth-child(4) :nth-child(2) .card, .container-sm :nth-child(4) :nth-child(2) .card, .container-md :nth-child(4) :nth-child(2) .card, .container-lg :nth-child(4) :nth-child(2) .card, .container-xl :nth-child(4) :nth-child(2) .card, .container-xxl :nth-child(4) :nth-child(2) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(4) :nth-child(3) .card, .container-sm :nth-child(4) :nth-child(3) .card, .container-md :nth-child(4) :nth-child(3) .card, .container-lg :nth-child(4) :nth-child(3) .card, .container-xl :nth-child(4) :nth-child(3) .card, .container-xxl :nth-child(4) :nth-child(3) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+}
+.container-fluid :nth-child(4) :nth-child(4) .card, .container-sm :nth-child(4) :nth-child(4) .card, .container-md :nth-child(4) :nth-child(4) .card, .container-lg :nth-child(4) :nth-child(4) .card, .container-xl :nth-child(4) :nth-child(4) .card, .container-xxl :nth-child(4) :nth-child(4) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(4) :nth-child(5) .card, .container-sm :nth-child(4) :nth-child(5) .card, .container-md :nth-child(4) :nth-child(5) .card, .container-lg :nth-child(4) :nth-child(5) .card, .container-xl :nth-child(4) :nth-child(5) .card, .container-xxl :nth-child(4) :nth-child(5) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
-}
-.container-fluid :nth-child(4) :nth-child(6) .card, .container-sm :nth-child(4) :nth-child(6) .card, .container-md :nth-child(4) :nth-child(6) .card, .container-lg :nth-child(4) :nth-child(6) .card, .container-xl :nth-child(4) :nth-child(6) .card, .container-xxl :nth-child(4) :nth-child(6) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(4) :nth-child(7) .card, .container-sm :nth-child(4) :nth-child(7) .card, .container-md :nth-child(4) :nth-child(7) .card, .container-lg :nth-child(4) :nth-child(7) .card, .container-xl :nth-child(4) :nth-child(7) .card, .container-xxl :nth-child(4) :nth-child(7) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
-.container-fluid :nth-child(4) :nth-child(8) .card, .container-sm :nth-child(4) :nth-child(8) .card, .container-md :nth-child(4) :nth-child(8) .card, .container-lg :nth-child(4) :nth-child(8) .card, .container-xl :nth-child(4) :nth-child(8) .card, .container-xxl :nth-child(4) :nth-child(8) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+.container-fluid :nth-child(4) :nth-child(6) .card, .container-sm :nth-child(4) :nth-child(6) .card, .container-md :nth-child(4) :nth-child(6) .card, .container-lg :nth-child(4) :nth-child(6) .card, .container-xl :nth-child(4) :nth-child(6) .card, .container-xxl :nth-child(4) :nth-child(6) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
-.container-fluid :nth-child(4) :nth-child(9) .card, .container-sm :nth-child(4) :nth-child(9) .card, .container-md :nth-child(4) :nth-child(9) .card, .container-lg :nth-child(4) :nth-child(9) .card, .container-xl :nth-child(4) :nth-child(9) .card, .container-xxl :nth-child(4) :nth-child(9) .card {
+.container-fluid :nth-child(4) :nth-child(7) .card, .container-sm :nth-child(4) :nth-child(7) .card, .container-md :nth-child(4) :nth-child(7) .card, .container-lg :nth-child(4) :nth-child(7) .card, .container-xl :nth-child(4) :nth-child(7) .card, .container-xxl :nth-child(4) :nth-child(7) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
+.container-fluid :nth-child(4) :nth-child(8) .card, .container-sm :nth-child(4) :nth-child(8) .card, .container-md :nth-child(4) :nth-child(8) .card, .container-lg :nth-child(4) :nth-child(8) .card, .container-xl :nth-child(4) :nth-child(8) .card, .container-xxl :nth-child(4) :nth-child(8) .card {
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(4) :nth-child(9) .card, .container-sm :nth-child(4) :nth-child(9) .card, .container-md :nth-child(4) :nth-child(9) .card, .container-lg :nth-child(4) :nth-child(9) .card, .container-xl :nth-child(4) :nth-child(9) .card, .container-xxl :nth-child(4) :nth-child(9) .card {
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+}
 .container-fluid :nth-child(4) :nth-child(10) .card, .container-sm :nth-child(4) :nth-child(10) .card, .container-md :nth-child(4) :nth-child(10) .card, .container-lg :nth-child(4) :nth-child(10) .card, .container-xl :nth-child(4) :nth-child(10) .card, .container-xxl :nth-child(4) :nth-child(10) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(4) :nth-child(11) .card, .container-sm :nth-child(4) :nth-child(11) .card, .container-md :nth-child(4) :nth-child(11) .card, .container-lg :nth-child(4) :nth-child(11) .card, .container-xl :nth-child(4) :nth-child(11) .card, .container-xxl :nth-child(4) :nth-child(11) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(4) :nth-child(12) .card, .container-sm :nth-child(4) :nth-child(12) .card, .container-md :nth-child(4) :nth-child(12) .card, .container-lg :nth-child(4) :nth-child(12) .card, .container-xl :nth-child(4) :nth-child(12) .card, .container-xxl :nth-child(4) :nth-child(12) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(5) :nth-child(0) .card, .container-sm :nth-child(5) :nth-child(0) .card, .container-md :nth-child(5) :nth-child(0) .card, .container-lg :nth-child(5) :nth-child(0) .card, .container-xl :nth-child(5) :nth-child(0) .card, .container-xxl :nth-child(5) :nth-child(0) .card {
   background-color: rgba(119, 131, 172, 0.6);
   box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(5) :nth-child(1) .card, .container-sm :nth-child(5) :nth-child(1) .card, .container-md :nth-child(5) :nth-child(1) .card, .container-lg :nth-child(5) :nth-child(1) .card, .container-xl :nth-child(5) :nth-child(1) .card, .container-xxl :nth-child(5) :nth-child(1) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(5) :nth-child(2) .card, .container-sm :nth-child(5) :nth-child(2) .card, .container-md :nth-child(5) :nth-child(2) .card, .container-lg :nth-child(5) :nth-child(2) .card, .container-xl :nth-child(5) :nth-child(2) .card, .container-xxl :nth-child(5) :nth-child(2) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(5) :nth-child(3) .card, .container-sm :nth-child(5) :nth-child(3) .card, .container-md :nth-child(5) :nth-child(3) .card, .container-lg :nth-child(5) :nth-child(3) .card, .container-xl :nth-child(5) :nth-child(3) .card, .container-xxl :nth-child(5) :nth-child(3) .card {
   background-color: rgba(182, 182, 151, 0.6);
@@ -12655,400 +12706,400 @@ input.checkBox:checked:after {
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(5) :nth-child(5) .card, .container-sm :nth-child(5) :nth-child(5) .card, .container-md :nth-child(5) :nth-child(5) .card, .container-lg :nth-child(5) :nth-child(5) .card, .container-xl :nth-child(5) :nth-child(5) .card, .container-xxl :nth-child(5) :nth-child(5) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(5) :nth-child(6) .card, .container-sm :nth-child(5) :nth-child(6) .card, .container-md :nth-child(5) :nth-child(6) .card, .container-lg :nth-child(5) :nth-child(6) .card, .container-xl :nth-child(5) :nth-child(6) .card, .container-xxl :nth-child(5) :nth-child(6) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(5) :nth-child(7) .card, .container-sm :nth-child(5) :nth-child(7) .card, .container-md :nth-child(5) :nth-child(7) .card, .container-lg :nth-child(5) :nth-child(7) .card, .container-xl :nth-child(5) :nth-child(7) .card, .container-xxl :nth-child(5) :nth-child(7) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
-.container-fluid :nth-child(5) :nth-child(8) .card, .container-sm :nth-child(5) :nth-child(8) .card, .container-md :nth-child(5) :nth-child(8) .card, .container-lg :nth-child(5) :nth-child(8) .card, .container-xl :nth-child(5) :nth-child(8) .card, .container-xxl :nth-child(5) :nth-child(8) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(5) :nth-child(9) .card, .container-sm :nth-child(5) :nth-child(9) .card, .container-md :nth-child(5) :nth-child(9) .card, .container-lg :nth-child(5) :nth-child(9) .card, .container-xl :nth-child(5) :nth-child(9) .card, .container-xxl :nth-child(5) :nth-child(9) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
-.container-fluid :nth-child(5) :nth-child(10) .card, .container-sm :nth-child(5) :nth-child(10) .card, .container-md :nth-child(5) :nth-child(10) .card, .container-lg :nth-child(5) :nth-child(10) .card, .container-xl :nth-child(5) :nth-child(10) .card, .container-xxl :nth-child(5) :nth-child(10) .card {
+.container-fluid :nth-child(5) :nth-child(6) .card, .container-sm :nth-child(5) :nth-child(6) .card, .container-md :nth-child(5) :nth-child(6) .card, .container-lg :nth-child(5) :nth-child(6) .card, .container-xl :nth-child(5) :nth-child(6) .card, .container-xxl :nth-child(5) :nth-child(6) .card {
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+}
+.container-fluid :nth-child(5) :nth-child(7) .card, .container-sm :nth-child(5) :nth-child(7) .card, .container-md :nth-child(5) :nth-child(7) .card, .container-lg :nth-child(5) :nth-child(7) .card, .container-xl :nth-child(5) :nth-child(7) .card, .container-xxl :nth-child(5) :nth-child(7) .card {
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(5) :nth-child(8) .card, .container-sm :nth-child(5) :nth-child(8) .card, .container-md :nth-child(5) :nth-child(8) .card, .container-lg :nth-child(5) :nth-child(8) .card, .container-xl :nth-child(5) :nth-child(8) .card, .container-xxl :nth-child(5) :nth-child(8) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
+.container-fluid :nth-child(5) :nth-child(9) .card, .container-sm :nth-child(5) :nth-child(9) .card, .container-md :nth-child(5) :nth-child(9) .card, .container-lg :nth-child(5) :nth-child(9) .card, .container-xl :nth-child(5) :nth-child(9) .card, .container-xxl :nth-child(5) :nth-child(9) .card {
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+}
+.container-fluid :nth-child(5) :nth-child(10) .card, .container-sm :nth-child(5) :nth-child(10) .card, .container-md :nth-child(5) :nth-child(10) .card, .container-lg :nth-child(5) :nth-child(10) .card, .container-xl :nth-child(5) :nth-child(10) .card, .container-xxl :nth-child(5) :nth-child(10) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
 .container-fluid :nth-child(5) :nth-child(11) .card, .container-sm :nth-child(5) :nth-child(11) .card, .container-md :nth-child(5) :nth-child(11) .card, .container-lg :nth-child(5) :nth-child(11) .card, .container-xl :nth-child(5) :nth-child(11) .card, .container-xxl :nth-child(5) :nth-child(11) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(5) :nth-child(12) .card, .container-sm :nth-child(5) :nth-child(12) .card, .container-md :nth-child(5) :nth-child(12) .card, .container-lg :nth-child(5) :nth-child(12) .card, .container-xl :nth-child(5) :nth-child(12) .card, .container-xxl :nth-child(5) :nth-child(12) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(0) .card, .container-sm :nth-child(6) :nth-child(0) .card, .container-md :nth-child(6) :nth-child(0) .card, .container-lg :nth-child(6) :nth-child(0) .card, .container-xl :nth-child(6) :nth-child(0) .card, .container-xxl :nth-child(6) :nth-child(0) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(1) .card, .container-sm :nth-child(6) :nth-child(1) .card, .container-md :nth-child(6) :nth-child(1) .card, .container-lg :nth-child(6) :nth-child(1) .card, .container-xl :nth-child(6) :nth-child(1) .card, .container-xxl :nth-child(6) :nth-child(1) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(2) .card, .container-sm :nth-child(6) :nth-child(2) .card, .container-md :nth-child(6) :nth-child(2) .card, .container-lg :nth-child(6) :nth-child(2) .card, .container-xl :nth-child(6) :nth-child(2) .card, .container-xxl :nth-child(6) :nth-child(2) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(6) :nth-child(3) .card, .container-sm :nth-child(6) :nth-child(3) .card, .container-md :nth-child(6) :nth-child(3) .card, .container-lg :nth-child(6) :nth-child(3) .card, .container-xl :nth-child(6) :nth-child(3) .card, .container-xxl :nth-child(6) :nth-child(3) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
-}
-.container-fluid :nth-child(6) :nth-child(4) .card, .container-sm :nth-child(6) :nth-child(4) .card, .container-md :nth-child(6) :nth-child(4) .card, .container-lg :nth-child(6) :nth-child(4) .card, .container-xl :nth-child(6) :nth-child(4) .card, .container-xxl :nth-child(6) :nth-child(4) .card {
   background-color: rgba(119, 131, 172, 0.6);
   box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
-.container-fluid :nth-child(6) :nth-child(5) .card, .container-sm :nth-child(6) :nth-child(5) .card, .container-md :nth-child(6) :nth-child(5) .card, .container-lg :nth-child(6) :nth-child(5) .card, .container-xl :nth-child(6) :nth-child(5) .card, .container-xxl :nth-child(6) :nth-child(5) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
-}
-.container-fluid :nth-child(6) :nth-child(6) .card, .container-sm :nth-child(6) :nth-child(6) .card, .container-md :nth-child(6) :nth-child(6) .card, .container-lg :nth-child(6) :nth-child(6) .card, .container-xl :nth-child(6) :nth-child(6) .card, .container-xxl :nth-child(6) :nth-child(6) .card {
+.container-fluid :nth-child(6) :nth-child(3) .card, .container-sm :nth-child(6) :nth-child(3) .card, .container-md :nth-child(6) :nth-child(3) .card, .container-lg :nth-child(6) :nth-child(3) .card, .container-xl :nth-child(6) :nth-child(3) .card, .container-xxl :nth-child(6) :nth-child(3) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+}
+.container-fluid :nth-child(6) :nth-child(4) .card, .container-sm :nth-child(6) :nth-child(4) .card, .container-md :nth-child(6) :nth-child(4) .card, .container-lg :nth-child(6) :nth-child(4) .card, .container-xl :nth-child(6) :nth-child(4) .card, .container-xxl :nth-child(6) :nth-child(4) .card {
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+}
+.container-fluid :nth-child(6) :nth-child(5) .card, .container-sm :nth-child(6) :nth-child(5) .card, .container-md :nth-child(6) :nth-child(5) .card, .container-lg :nth-child(6) :nth-child(5) .card, .container-xl :nth-child(6) :nth-child(5) .card, .container-xxl :nth-child(6) :nth-child(5) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+}
+.container-fluid :nth-child(6) :nth-child(6) .card, .container-sm :nth-child(6) :nth-child(6) .card, .container-md :nth-child(6) :nth-child(6) .card, .container-lg :nth-child(6) :nth-child(6) .card, .container-xl :nth-child(6) :nth-child(6) .card, .container-xxl :nth-child(6) :nth-child(6) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(7) .card, .container-sm :nth-child(6) :nth-child(7) .card, .container-md :nth-child(6) :nth-child(7) .card, .container-lg :nth-child(6) :nth-child(7) .card, .container-xl :nth-child(6) :nth-child(7) .card, .container-xxl :nth-child(6) :nth-child(7) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(8) .card, .container-sm :nth-child(6) :nth-child(8) .card, .container-md :nth-child(6) :nth-child(8) .card, .container-lg :nth-child(6) :nth-child(8) .card, .container-xl :nth-child(6) :nth-child(8) .card, .container-xxl :nth-child(6) :nth-child(8) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(9) .card, .container-sm :nth-child(6) :nth-child(9) .card, .container-md :nth-child(6) :nth-child(9) .card, .container-lg :nth-child(6) :nth-child(9) .card, .container-xl :nth-child(6) :nth-child(9) .card, .container-xxl :nth-child(6) :nth-child(9) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(10) .card, .container-sm :nth-child(6) :nth-child(10) .card, .container-md :nth-child(6) :nth-child(10) .card, .container-lg :nth-child(6) :nth-child(10) .card, .container-xl :nth-child(6) :nth-child(10) .card, .container-xxl :nth-child(6) :nth-child(10) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(6) :nth-child(11) .card, .container-sm :nth-child(6) :nth-child(11) .card, .container-md :nth-child(6) :nth-child(11) .card, .container-lg :nth-child(6) :nth-child(11) .card, .container-xl :nth-child(6) :nth-child(11) .card, .container-xxl :nth-child(6) :nth-child(11) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(6) :nth-child(12) .card, .container-sm :nth-child(6) :nth-child(12) .card, .container-md :nth-child(6) :nth-child(12) .card, .container-lg :nth-child(6) :nth-child(12) .card, .container-xl :nth-child(6) :nth-child(12) .card, .container-xxl :nth-child(6) :nth-child(12) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(6) :nth-child(12) .card, .container-sm :nth-child(6) :nth-child(12) .card, .container-md :nth-child(6) :nth-child(12) .card, .container-lg :nth-child(6) :nth-child(12) .card, .container-xl :nth-child(6) :nth-child(12) .card, .container-xxl :nth-child(6) :nth-child(12) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(0) .card, .container-sm :nth-child(7) :nth-child(0) .card, .container-md :nth-child(7) :nth-child(0) .card, .container-lg :nth-child(7) :nth-child(0) .card, .container-xl :nth-child(7) :nth-child(0) .card, .container-xxl :nth-child(7) :nth-child(0) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(1) .card, .container-sm :nth-child(7) :nth-child(1) .card, .container-md :nth-child(7) :nth-child(1) .card, .container-lg :nth-child(7) :nth-child(1) .card, .container-xl :nth-child(7) :nth-child(1) .card, .container-xxl :nth-child(7) :nth-child(1) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(2) .card, .container-sm :nth-child(7) :nth-child(2) .card, .container-md :nth-child(7) :nth-child(2) .card, .container-lg :nth-child(7) :nth-child(2) .card, .container-xl :nth-child(7) :nth-child(2) .card, .container-xxl :nth-child(7) :nth-child(2) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(7) :nth-child(3) .card, .container-sm :nth-child(7) :nth-child(3) .card, .container-md :nth-child(7) :nth-child(3) .card, .container-lg :nth-child(7) :nth-child(3) .card, .container-xl :nth-child(7) :nth-child(3) .card, .container-xxl :nth-child(7) :nth-child(3) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
-.container-fluid :nth-child(7) :nth-child(4) .card, .container-sm :nth-child(7) :nth-child(4) .card, .container-md :nth-child(7) :nth-child(4) .card, .container-lg :nth-child(7) :nth-child(4) .card, .container-xl :nth-child(7) :nth-child(4) .card, .container-xxl :nth-child(7) :nth-child(4) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
+.container-fluid :nth-child(7) :nth-child(3) .card, .container-sm :nth-child(7) :nth-child(3) .card, .container-md :nth-child(7) :nth-child(3) .card, .container-lg :nth-child(7) :nth-child(3) .card, .container-xl :nth-child(7) :nth-child(3) .card, .container-xxl :nth-child(7) :nth-child(3) .card {
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+}
+.container-fluid :nth-child(7) :nth-child(4) .card, .container-sm :nth-child(7) :nth-child(4) .card, .container-md :nth-child(7) :nth-child(4) .card, .container-lg :nth-child(7) :nth-child(4) .card, .container-xl :nth-child(7) :nth-child(4) .card, .container-xxl :nth-child(7) :nth-child(4) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
 .container-fluid :nth-child(7) :nth-child(5) .card, .container-sm :nth-child(7) :nth-child(5) .card, .container-md :nth-child(7) :nth-child(5) .card, .container-lg :nth-child(7) :nth-child(5) .card, .container-xl :nth-child(7) :nth-child(5) .card, .container-xxl :nth-child(7) :nth-child(5) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(6) .card, .container-sm :nth-child(7) :nth-child(6) .card, .container-md :nth-child(7) :nth-child(6) .card, .container-lg :nth-child(7) :nth-child(6) .card, .container-xl :nth-child(7) :nth-child(6) .card, .container-xxl :nth-child(7) :nth-child(6) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(7) .card, .container-sm :nth-child(7) :nth-child(7) .card, .container-md :nth-child(7) :nth-child(7) .card, .container-lg :nth-child(7) :nth-child(7) .card, .container-xl :nth-child(7) :nth-child(7) .card, .container-xxl :nth-child(7) :nth-child(7) .card {
   background-color: rgba(119, 131, 172, 0.6);
   box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(8) .card, .container-sm :nth-child(7) :nth-child(8) .card, .container-md :nth-child(7) :nth-child(8) .card, .container-lg :nth-child(7) :nth-child(8) .card, .container-xl :nth-child(7) :nth-child(8) .card, .container-xxl :nth-child(7) :nth-child(8) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(9) .card, .container-sm :nth-child(7) :nth-child(9) .card, .container-md :nth-child(7) :nth-child(9) .card, .container-lg :nth-child(7) :nth-child(9) .card, .container-xl :nth-child(7) :nth-child(9) .card, .container-xxl :nth-child(7) :nth-child(9) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(10) .card, .container-sm :nth-child(7) :nth-child(10) .card, .container-md :nth-child(7) :nth-child(10) .card, .container-lg :nth-child(7) :nth-child(10) .card, .container-xl :nth-child(7) :nth-child(10) .card, .container-xxl :nth-child(7) :nth-child(10) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(11) .card, .container-sm :nth-child(7) :nth-child(11) .card, .container-md :nth-child(7) :nth-child(11) .card, .container-lg :nth-child(7) :nth-child(11) .card, .container-xl :nth-child(7) :nth-child(11) .card, .container-xxl :nth-child(7) :nth-child(11) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(7) :nth-child(12) .card, .container-sm :nth-child(7) :nth-child(12) .card, .container-md :nth-child(7) :nth-child(12) .card, .container-lg :nth-child(7) :nth-child(12) .card, .container-xl :nth-child(7) :nth-child(12) .card, .container-xxl :nth-child(7) :nth-child(12) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(0) .card, .container-sm :nth-child(8) :nth-child(0) .card, .container-md :nth-child(8) :nth-child(0) .card, .container-lg :nth-child(8) :nth-child(0) .card, .container-xl :nth-child(8) :nth-child(0) .card, .container-xxl :nth-child(8) :nth-child(0) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(1) .card, .container-sm :nth-child(8) :nth-child(1) .card, .container-md :nth-child(8) :nth-child(1) .card, .container-lg :nth-child(8) :nth-child(1) .card, .container-xl :nth-child(8) :nth-child(1) .card, .container-xxl :nth-child(8) :nth-child(1) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(2) .card, .container-sm :nth-child(8) :nth-child(2) .card, .container-md :nth-child(8) :nth-child(2) .card, .container-lg :nth-child(8) :nth-child(2) .card, .container-xl :nth-child(8) :nth-child(2) .card, .container-xxl :nth-child(8) :nth-child(2) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(3) .card, .container-sm :nth-child(8) :nth-child(3) .card, .container-md :nth-child(8) :nth-child(3) .card, .container-lg :nth-child(8) :nth-child(3) .card, .container-xl :nth-child(8) :nth-child(3) .card, .container-xxl :nth-child(8) :nth-child(3) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(4) .card, .container-sm :nth-child(8) :nth-child(4) .card, .container-md :nth-child(8) :nth-child(4) .card, .container-lg :nth-child(8) :nth-child(4) .card, .container-xl :nth-child(8) :nth-child(4) .card, .container-xxl :nth-child(8) :nth-child(4) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(5) .card, .container-sm :nth-child(8) :nth-child(5) .card, .container-md :nth-child(8) :nth-child(5) .card, .container-lg :nth-child(8) :nth-child(5) .card, .container-xl :nth-child(8) :nth-child(5) .card, .container-xxl :nth-child(8) :nth-child(5) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(6) .card, .container-sm :nth-child(8) :nth-child(6) .card, .container-md :nth-child(8) :nth-child(6) .card, .container-lg :nth-child(8) :nth-child(6) .card, .container-xl :nth-child(8) :nth-child(6) .card, .container-xxl :nth-child(8) :nth-child(6) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(7) .card, .container-sm :nth-child(8) :nth-child(7) .card, .container-md :nth-child(8) :nth-child(7) .card, .container-lg :nth-child(8) :nth-child(7) .card, .container-xl :nth-child(8) :nth-child(7) .card, .container-xxl :nth-child(8) :nth-child(7) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(8) :nth-child(8) .card, .container-sm :nth-child(8) :nth-child(8) .card, .container-md :nth-child(8) :nth-child(8) .card, .container-lg :nth-child(8) :nth-child(8) .card, .container-xl :nth-child(8) :nth-child(8) .card, .container-xxl :nth-child(8) :nth-child(8) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(8) :nth-child(9) .card, .container-sm :nth-child(8) :nth-child(9) .card, .container-md :nth-child(8) :nth-child(9) .card, .container-lg :nth-child(8) :nth-child(9) .card, .container-xl :nth-child(8) :nth-child(9) .card, .container-xxl :nth-child(8) :nth-child(9) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
-.container-fluid :nth-child(8) :nth-child(10) .card, .container-sm :nth-child(8) :nth-child(10) .card, .container-md :nth-child(8) :nth-child(10) .card, .container-lg :nth-child(8) :nth-child(10) .card, .container-xl :nth-child(8) :nth-child(10) .card, .container-xxl :nth-child(8) :nth-child(10) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
-.container-fluid :nth-child(8) :nth-child(11) .card, .container-sm :nth-child(8) :nth-child(11) .card, .container-md :nth-child(8) :nth-child(11) .card, .container-lg :nth-child(8) :nth-child(11) .card, .container-xl :nth-child(8) :nth-child(11) .card, .container-xxl :nth-child(8) :nth-child(11) .card {
+.container-fluid :nth-child(8) :nth-child(9) .card, .container-sm :nth-child(8) :nth-child(9) .card, .container-md :nth-child(8) :nth-child(9) .card, .container-lg :nth-child(8) :nth-child(9) .card, .container-xl :nth-child(8) :nth-child(9) .card, .container-xxl :nth-child(8) :nth-child(9) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
-.container-fluid :nth-child(8) :nth-child(12) .card, .container-sm :nth-child(8) :nth-child(12) .card, .container-md :nth-child(8) :nth-child(12) .card, .container-lg :nth-child(8) :nth-child(12) .card, .container-xl :nth-child(8) :nth-child(12) .card, .container-xxl :nth-child(8) :nth-child(12) .card {
+.container-fluid :nth-child(8) :nth-child(10) .card, .container-sm :nth-child(8) :nth-child(10) .card, .container-md :nth-child(8) :nth-child(10) .card, .container-lg :nth-child(8) :nth-child(10) .card, .container-xl :nth-child(8) :nth-child(10) .card, .container-xxl :nth-child(8) :nth-child(10) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(8) :nth-child(11) .card, .container-sm :nth-child(8) :nth-child(11) .card, .container-md :nth-child(8) :nth-child(11) .card, .container-lg :nth-child(8) :nth-child(11) .card, .container-xl :nth-child(8) :nth-child(11) .card, .container-xxl :nth-child(8) :nth-child(11) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+}
+.container-fluid :nth-child(8) :nth-child(12) .card, .container-sm :nth-child(8) :nth-child(12) .card, .container-md :nth-child(8) :nth-child(12) .card, .container-lg :nth-child(8) :nth-child(12) .card, .container-xl :nth-child(8) :nth-child(12) .card, .container-xxl :nth-child(8) :nth-child(12) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(0) .card, .container-sm :nth-child(9) :nth-child(0) .card, .container-md :nth-child(9) :nth-child(0) .card, .container-lg :nth-child(9) :nth-child(0) .card, .container-xl :nth-child(9) :nth-child(0) .card, .container-xxl :nth-child(9) :nth-child(0) .card {
   background-color: rgba(182, 182, 151, 0.6);
   box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(1) .card, .container-sm :nth-child(9) :nth-child(1) .card, .container-md :nth-child(9) :nth-child(1) .card, .container-lg :nth-child(9) :nth-child(1) .card, .container-xl :nth-child(9) :nth-child(1) .card, .container-xxl :nth-child(9) :nth-child(1) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(2) .card, .container-sm :nth-child(9) :nth-child(2) .card, .container-md :nth-child(9) :nth-child(2) .card, .container-lg :nth-child(9) :nth-child(2) .card, .container-xl :nth-child(9) :nth-child(2) .card, .container-xxl :nth-child(9) :nth-child(2) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(3) .card, .container-sm :nth-child(9) :nth-child(3) .card, .container-md :nth-child(9) :nth-child(3) .card, .container-lg :nth-child(9) :nth-child(3) .card, .container-xl :nth-child(9) :nth-child(3) .card, .container-xxl :nth-child(9) :nth-child(3) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(4) .card, .container-sm :nth-child(9) :nth-child(4) .card, .container-md :nth-child(9) :nth-child(4) .card, .container-lg :nth-child(9) :nth-child(4) .card, .container-xl :nth-child(9) :nth-child(4) .card, .container-xxl :nth-child(9) :nth-child(4) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(5) .card, .container-sm :nth-child(9) :nth-child(5) .card, .container-md :nth-child(9) :nth-child(5) .card, .container-lg :nth-child(9) :nth-child(5) .card, .container-xl :nth-child(9) :nth-child(5) .card, .container-xxl :nth-child(9) :nth-child(5) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(9) :nth-child(6) .card, .container-sm :nth-child(9) :nth-child(6) .card, .container-md :nth-child(9) :nth-child(6) .card, .container-lg :nth-child(9) :nth-child(6) .card, .container-xl :nth-child(9) :nth-child(6) .card, .container-xxl :nth-child(9) :nth-child(6) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
+.container-fluid :nth-child(9) :nth-child(6) .card, .container-sm :nth-child(9) :nth-child(6) .card, .container-md :nth-child(9) :nth-child(6) .card, .container-lg :nth-child(9) :nth-child(6) .card, .container-xl :nth-child(9) :nth-child(6) .card, .container-xxl :nth-child(9) :nth-child(6) .card {
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+}
 .container-fluid :nth-child(9) :nth-child(7) .card, .container-sm :nth-child(9) :nth-child(7) .card, .container-md :nth-child(9) :nth-child(7) .card, .container-lg :nth-child(9) :nth-child(7) .card, .container-xl :nth-child(9) :nth-child(7) .card, .container-xxl :nth-child(9) :nth-child(7) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(8) .card, .container-sm :nth-child(9) :nth-child(8) .card, .container-md :nth-child(9) :nth-child(8) .card, .container-lg :nth-child(9) :nth-child(8) .card, .container-xl :nth-child(9) :nth-child(8) .card, .container-xxl :nth-child(9) :nth-child(8) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(9) .card, .container-sm :nth-child(9) :nth-child(9) .card, .container-md :nth-child(9) :nth-child(9) .card, .container-lg :nth-child(9) :nth-child(9) .card, .container-xl :nth-child(9) :nth-child(9) .card, .container-xxl :nth-child(9) :nth-child(9) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(9) :nth-child(10) .card, .container-sm :nth-child(9) :nth-child(10) .card, .container-md :nth-child(9) :nth-child(10) .card, .container-lg :nth-child(9) :nth-child(10) .card, .container-xl :nth-child(9) :nth-child(10) .card, .container-xxl :nth-child(9) :nth-child(10) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
-.container-fluid :nth-child(9) :nth-child(10) .card, .container-sm :nth-child(9) :nth-child(10) .card, .container-md :nth-child(9) :nth-child(10) .card, .container-lg :nth-child(9) :nth-child(10) .card, .container-xl :nth-child(9) :nth-child(10) .card, .container-xxl :nth-child(9) :nth-child(10) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
-}
 .container-fluid :nth-child(9) :nth-child(11) .card, .container-sm :nth-child(9) :nth-child(11) .card, .container-md :nth-child(9) :nth-child(11) .card, .container-lg :nth-child(9) :nth-child(11) .card, .container-xl :nth-child(9) :nth-child(11) .card, .container-xxl :nth-child(9) :nth-child(11) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(9) :nth-child(12) .card, .container-sm :nth-child(9) :nth-child(12) .card, .container-md :nth-child(9) :nth-child(12) .card, .container-lg :nth-child(9) :nth-child(12) .card, .container-xl :nth-child(9) :nth-child(12) .card, .container-xxl :nth-child(9) :nth-child(12) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
 .container-fluid :nth-child(10) :nth-child(0) .card, .container-sm :nth-child(10) :nth-child(0) .card, .container-md :nth-child(10) :nth-child(0) .card, .container-lg :nth-child(10) :nth-child(0) .card, .container-xl :nth-child(10) :nth-child(0) .card, .container-xxl :nth-child(10) :nth-child(0) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
-.container-fluid :nth-child(10) :nth-child(1) .card, .container-sm :nth-child(10) :nth-child(1) .card, .container-md :nth-child(10) :nth-child(1) .card, .container-lg :nth-child(10) :nth-child(1) .card, .container-xl :nth-child(10) :nth-child(1) .card, .container-xxl :nth-child(10) :nth-child(1) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(10) :nth-child(2) .card, .container-sm :nth-child(10) :nth-child(2) .card, .container-md :nth-child(10) :nth-child(2) .card, .container-lg :nth-child(10) :nth-child(2) .card, .container-xl :nth-child(10) :nth-child(2) .card, .container-xxl :nth-child(10) :nth-child(2) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(10) :nth-child(3) .card, .container-sm :nth-child(10) :nth-child(3) .card, .container-md :nth-child(10) :nth-child(3) .card, .container-lg :nth-child(10) :nth-child(3) .card, .container-xl :nth-child(10) :nth-child(3) .card, .container-xxl :nth-child(10) :nth-child(3) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(10) :nth-child(1) .card, .container-sm :nth-child(10) :nth-child(1) .card, .container-md :nth-child(10) :nth-child(1) .card, .container-lg :nth-child(10) :nth-child(1) .card, .container-xl :nth-child(10) :nth-child(1) .card, .container-xxl :nth-child(10) :nth-child(1) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(10) :nth-child(2) .card, .container-sm :nth-child(10) :nth-child(2) .card, .container-md :nth-child(10) :nth-child(2) .card, .container-lg :nth-child(10) :nth-child(2) .card, .container-xl :nth-child(10) :nth-child(2) .card, .container-xxl :nth-child(10) :nth-child(2) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+}
+.container-fluid :nth-child(10) :nth-child(3) .card, .container-sm :nth-child(10) :nth-child(3) .card, .container-md :nth-child(10) :nth-child(3) .card, .container-lg :nth-child(10) :nth-child(3) .card, .container-xl :nth-child(10) :nth-child(3) .card, .container-xxl :nth-child(10) :nth-child(3) .card {
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(10) :nth-child(4) .card, .container-sm :nth-child(10) :nth-child(4) .card, .container-md :nth-child(10) :nth-child(4) .card, .container-lg :nth-child(10) :nth-child(4) .card, .container-xl :nth-child(10) :nth-child(4) .card, .container-xxl :nth-child(10) :nth-child(4) .card {
   background-color: rgba(182, 182, 151, 0.6);
   box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(10) :nth-child(5) .card, .container-sm :nth-child(10) :nth-child(5) .card, .container-md :nth-child(10) :nth-child(5) .card, .container-lg :nth-child(10) :nth-child(5) .card, .container-xl :nth-child(10) :nth-child(5) .card, .container-xxl :nth-child(10) :nth-child(5) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
 .container-fluid :nth-child(10) :nth-child(6) .card, .container-sm :nth-child(10) :nth-child(6) .card, .container-md :nth-child(10) :nth-child(6) .card, .container-lg :nth-child(10) :nth-child(6) .card, .container-xl :nth-child(10) :nth-child(6) .card, .container-xxl :nth-child(10) :nth-child(6) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(10) :nth-child(7) .card, .container-sm :nth-child(10) :nth-child(7) .card, .container-md :nth-child(10) :nth-child(7) .card, .container-lg :nth-child(10) :nth-child(7) .card, .container-xl :nth-child(10) :nth-child(7) .card, .container-xxl :nth-child(10) :nth-child(7) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
-}
-.container-fluid :nth-child(10) :nth-child(8) .card, .container-sm :nth-child(10) :nth-child(8) .card, .container-md :nth-child(10) :nth-child(8) .card, .container-lg :nth-child(10) :nth-child(8) .card, .container-xl :nth-child(10) :nth-child(8) .card, .container-xxl :nth-child(10) :nth-child(8) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
+.container-fluid :nth-child(10) :nth-child(7) .card, .container-sm :nth-child(10) :nth-child(7) .card, .container-md :nth-child(10) :nth-child(7) .card, .container-lg :nth-child(10) :nth-child(7) .card, .container-xl :nth-child(10) :nth-child(7) .card, .container-xxl :nth-child(10) :nth-child(7) .card {
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+}
+.container-fluid :nth-child(10) :nth-child(8) .card, .container-sm :nth-child(10) :nth-child(8) .card, .container-md :nth-child(10) :nth-child(8) .card, .container-lg :nth-child(10) :nth-child(8) .card, .container-xl :nth-child(10) :nth-child(8) .card, .container-xxl :nth-child(10) :nth-child(8) .card {
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+}
 .container-fluid :nth-child(10) :nth-child(9) .card, .container-sm :nth-child(10) :nth-child(9) .card, .container-md :nth-child(10) :nth-child(9) .card, .container-lg :nth-child(10) :nth-child(9) .card, .container-xl :nth-child(10) :nth-child(9) .card, .container-xxl :nth-child(10) :nth-child(9) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(10) :nth-child(10) .card, .container-sm :nth-child(10) :nth-child(10) .card, .container-md :nth-child(10) :nth-child(10) .card, .container-lg :nth-child(10) :nth-child(10) .card, .container-xl :nth-child(10) :nth-child(10) .card, .container-xxl :nth-child(10) :nth-child(10) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(10) :nth-child(11) .card, .container-sm :nth-child(10) :nth-child(11) .card, .container-md :nth-child(10) :nth-child(11) .card, .container-lg :nth-child(10) :nth-child(11) .card, .container-xl :nth-child(10) :nth-child(11) .card, .container-xxl :nth-child(10) :nth-child(11) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(10) :nth-child(12) .card, .container-sm :nth-child(10) :nth-child(12) .card, .container-md :nth-child(10) :nth-child(12) .card, .container-lg :nth-child(10) :nth-child(12) .card, .container-xl :nth-child(10) :nth-child(12) .card, .container-xxl :nth-child(10) :nth-child(12) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(0) .card, .container-sm :nth-child(11) :nth-child(0) .card, .container-md :nth-child(11) :nth-child(0) .card, .container-lg :nth-child(11) :nth-child(0) .card, .container-xl :nth-child(11) :nth-child(0) .card, .container-xxl :nth-child(11) :nth-child(0) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(1) .card, .container-sm :nth-child(11) :nth-child(1) .card, .container-md :nth-child(11) :nth-child(1) .card, .container-lg :nth-child(11) :nth-child(1) .card, .container-xl :nth-child(11) :nth-child(1) .card, .container-xxl :nth-child(11) :nth-child(1) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(2) .card, .container-sm :nth-child(11) :nth-child(2) .card, .container-md :nth-child(11) :nth-child(2) .card, .container-lg :nth-child(11) :nth-child(2) .card, .container-xl :nth-child(11) :nth-child(2) .card, .container-xxl :nth-child(11) :nth-child(2) .card {
+  background-color: rgba(182, 182, 151, 0.6);
+  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
+}
+.container-fluid :nth-child(11) :nth-child(3) .card, .container-sm :nth-child(11) :nth-child(3) .card, .container-md :nth-child(11) :nth-child(3) .card, .container-lg :nth-child(11) :nth-child(3) .card, .container-xl :nth-child(11) :nth-child(3) .card, .container-xxl :nth-child(11) :nth-child(3) .card {
   background-color: rgba(97, 156, 196, 0.6);
   box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
-.container-fluid :nth-child(11) :nth-child(3) .card, .container-sm :nth-child(11) :nth-child(3) .card, .container-md :nth-child(11) :nth-child(3) .card, .container-lg :nth-child(11) :nth-child(3) .card, .container-xl :nth-child(11) :nth-child(3) .card, .container-xxl :nth-child(11) :nth-child(3) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
-}
 .container-fluid :nth-child(11) :nth-child(4) .card, .container-sm :nth-child(11) :nth-child(4) .card, .container-md :nth-child(11) :nth-child(4) .card, .container-lg :nth-child(11) :nth-child(4) .card, .container-xl :nth-child(11) :nth-child(4) .card, .container-xxl :nth-child(11) :nth-child(4) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(5) .card, .container-sm :nth-child(11) :nth-child(5) .card, .container-md :nth-child(11) :nth-child(5) .card, .container-lg :nth-child(11) :nth-child(5) .card, .container-xl :nth-child(11) :nth-child(5) .card, .container-xxl :nth-child(11) :nth-child(5) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(6) .card, .container-sm :nth-child(11) :nth-child(6) .card, .container-md :nth-child(11) :nth-child(6) .card, .container-lg :nth-child(11) :nth-child(6) .card, .container-xl :nth-child(11) :nth-child(6) .card, .container-xxl :nth-child(11) :nth-child(6) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(7) .card, .container-sm :nth-child(11) :nth-child(7) .card, .container-md :nth-child(11) :nth-child(7) .card, .container-lg :nth-child(11) :nth-child(7) .card, .container-xl :nth-child(11) :nth-child(7) .card, .container-xxl :nth-child(11) :nth-child(7) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(8) .card, .container-sm :nth-child(11) :nth-child(8) .card, .container-md :nth-child(11) :nth-child(8) .card, .container-lg :nth-child(11) :nth-child(8) .card, .container-xl :nth-child(11) :nth-child(8) .card, .container-xxl :nth-child(11) :nth-child(8) .card {
-  background-color: rgba(119, 131, 172, 0.6);
-  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(9) .card, .container-sm :nth-child(11) :nth-child(9) .card, .container-md :nth-child(11) :nth-child(9) .card, .container-lg :nth-child(11) :nth-child(9) .card, .container-xl :nth-child(11) :nth-child(9) .card, .container-xxl :nth-child(11) :nth-child(9) .card {
   background-color: rgba(119, 131, 172, 0.6);
   box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
 .container-fluid :nth-child(11) :nth-child(10) .card, .container-sm :nth-child(11) :nth-child(10) .card, .container-md :nth-child(11) :nth-child(10) .card, .container-lg :nth-child(11) :nth-child(10) .card, .container-xl :nth-child(11) :nth-child(10) .card, .container-xxl :nth-child(11) :nth-child(10) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
-}
-.container-fluid :nth-child(11) :nth-child(11) .card, .container-sm :nth-child(11) :nth-child(11) .card, .container-md :nth-child(11) :nth-child(11) .card, .container-lg :nth-child(11) :nth-child(11) .card, .container-xl :nth-child(11) :nth-child(11) .card, .container-xxl :nth-child(11) :nth-child(11) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
-}
-.container-fluid :nth-child(11) :nth-child(12) .card, .container-sm :nth-child(11) :nth-child(12) .card, .container-md :nth-child(11) :nth-child(12) .card, .container-lg :nth-child(11) :nth-child(12) .card, .container-xl :nth-child(11) :nth-child(12) .card, .container-xxl :nth-child(11) :nth-child(12) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(0) .card, .container-sm :nth-child(12) :nth-child(0) .card, .container-md :nth-child(12) :nth-child(0) .card, .container-lg :nth-child(12) :nth-child(0) .card, .container-xl :nth-child(12) :nth-child(0) .card, .container-xxl :nth-child(12) :nth-child(0) .card {
-  background-color: rgba(182, 182, 151, 0.6);
-  box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(1) .card, .container-sm :nth-child(12) :nth-child(1) .card, .container-md :nth-child(12) :nth-child(1) .card, .container-lg :nth-child(12) :nth-child(1) .card, .container-xl :nth-child(12) :nth-child(1) .card, .container-xxl :nth-child(12) :nth-child(1) .card {
-  background-color: rgba(140, 195, 252, 0.6);
-  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(2) .card, .container-sm :nth-child(12) :nth-child(2) .card, .container-md :nth-child(12) :nth-child(2) .card, .container-lg :nth-child(12) :nth-child(2) .card, .container-xl :nth-child(12) :nth-child(2) .card, .container-xxl :nth-child(12) :nth-child(2) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(3) .card, .container-sm :nth-child(12) :nth-child(3) .card, .container-md :nth-child(12) :nth-child(3) .card, .container-lg :nth-child(12) :nth-child(3) .card, .container-xl :nth-child(12) :nth-child(3) .card, .container-xxl :nth-child(12) :nth-child(3) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(4) .card, .container-sm :nth-child(12) :nth-child(4) .card, .container-md :nth-child(12) :nth-child(4) .card, .container-lg :nth-child(12) :nth-child(4) .card, .container-xl :nth-child(12) :nth-child(4) .card, .container-xxl :nth-child(12) :nth-child(4) .card {
   background-color: rgba(119, 131, 172, 0.6);
   box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
 }
-.container-fluid :nth-child(12) :nth-child(5) .card, .container-sm :nth-child(12) :nth-child(5) .card, .container-md :nth-child(12) :nth-child(5) .card, .container-lg :nth-child(12) :nth-child(5) .card, .container-xl :nth-child(12) :nth-child(5) .card, .container-xxl :nth-child(12) :nth-child(5) .card {
-  background-color: rgba(97, 156, 196, 0.6);
-  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(6) .card, .container-sm :nth-child(12) :nth-child(6) .card, .container-md :nth-child(12) :nth-child(6) .card, .container-lg :nth-child(12) :nth-child(6) .card, .container-xl :nth-child(12) :nth-child(6) .card, .container-xxl :nth-child(12) :nth-child(6) .card {
-  background-color: rgba(139, 173, 163, 0.6);
-  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(7) .card, .container-sm :nth-child(12) :nth-child(7) .card, .container-md :nth-child(12) :nth-child(7) .card, .container-lg :nth-child(12) :nth-child(7) .card, .container-xl :nth-child(12) :nth-child(7) .card, .container-xxl :nth-child(12) :nth-child(7) .card {
+.container-fluid :nth-child(11) :nth-child(11) .card, .container-sm :nth-child(11) :nth-child(11) .card, .container-md :nth-child(11) :nth-child(11) .card, .container-lg :nth-child(11) :nth-child(11) .card, .container-xl :nth-child(11) :nth-child(11) .card, .container-xxl :nth-child(11) :nth-child(11) .card {
   background-color: rgba(182, 182, 151, 0.6);
   box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
-.container-fluid :nth-child(12) :nth-child(8) .card, .container-sm :nth-child(12) :nth-child(8) .card, .container-md :nth-child(12) :nth-child(8) .card, .container-lg :nth-child(12) :nth-child(8) .card, .container-xl :nth-child(12) :nth-child(8) .card, .container-xxl :nth-child(12) :nth-child(8) .card {
+.container-fluid :nth-child(11) :nth-child(12) .card, .container-sm :nth-child(11) :nth-child(12) .card, .container-md :nth-child(11) :nth-child(12) .card, .container-lg :nth-child(11) :nth-child(12) .card, .container-xl :nth-child(11) :nth-child(12) .card, .container-xxl :nth-child(11) :nth-child(12) .card {
   background-color: rgba(231, 171, 180, 0.6);
   box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
 }
-.container-fluid :nth-child(12) :nth-child(9) .card, .container-sm :nth-child(12) :nth-child(9) .card, .container-md :nth-child(12) :nth-child(9) .card, .container-lg :nth-child(12) :nth-child(9) .card, .container-xl :nth-child(12) :nth-child(9) .card, .container-xxl :nth-child(12) :nth-child(9) .card {
-  background-color: rgba(231, 171, 180, 0.6);
-  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
-}
-.container-fluid :nth-child(12) :nth-child(10) .card, .container-sm :nth-child(12) :nth-child(10) .card, .container-md :nth-child(12) :nth-child(10) .card, .container-lg :nth-child(12) :nth-child(10) .card, .container-xl :nth-child(12) :nth-child(10) .card, .container-xxl :nth-child(12) :nth-child(10) .card {
+.container-fluid :nth-child(12) :nth-child(0) .card, .container-sm :nth-child(12) :nth-child(0) .card, .container-md :nth-child(12) :nth-child(0) .card, .container-lg :nth-child(12) :nth-child(0) .card, .container-xl :nth-child(12) :nth-child(0) .card, .container-xxl :nth-child(12) :nth-child(0) .card {
   background-color: rgba(140, 195, 252, 0.6);
   box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
 }
-.container-fluid :nth-child(12) :nth-child(11) .card, .container-sm :nth-child(12) :nth-child(11) .card, .container-md :nth-child(12) :nth-child(11) .card, .container-lg :nth-child(12) :nth-child(11) .card, .container-xl :nth-child(12) :nth-child(11) .card, .container-xxl :nth-child(12) :nth-child(11) .card {
+.container-fluid :nth-child(12) :nth-child(1) .card, .container-sm :nth-child(12) :nth-child(1) .card, .container-md :nth-child(12) :nth-child(1) .card, .container-lg :nth-child(12) :nth-child(1) .card, .container-xl :nth-child(12) :nth-child(1) .card, .container-xxl :nth-child(12) :nth-child(1) .card {
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(2) .card, .container-sm :nth-child(12) :nth-child(2) .card, .container-md :nth-child(12) :nth-child(2) .card, .container-lg :nth-child(12) :nth-child(2) .card, .container-xl :nth-child(12) :nth-child(2) .card, .container-xxl :nth-child(12) :nth-child(2) .card {
   background-color: rgba(182, 182, 151, 0.6);
   box-shadow: 8px 5px 1px rgba(182, 182, 151, 0.2);
 }
-.container-fluid :nth-child(12) :nth-child(12) .card, .container-sm :nth-child(12) :nth-child(12) .card, .container-md :nth-child(12) :nth-child(12) .card, .container-lg :nth-child(12) :nth-child(12) .card, .container-xl :nth-child(12) :nth-child(12) .card, .container-xxl :nth-child(12) :nth-child(12) .card {
+.container-fluid :nth-child(12) :nth-child(3) .card, .container-sm :nth-child(12) :nth-child(3) .card, .container-md :nth-child(12) :nth-child(3) .card, .container-lg :nth-child(12) :nth-child(3) .card, .container-xl :nth-child(12) :nth-child(3) .card, .container-xxl :nth-child(12) :nth-child(3) .card {
   background-color: rgba(139, 173, 163, 0.6);
   box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(4) .card, .container-sm :nth-child(12) :nth-child(4) .card, .container-md :nth-child(12) :nth-child(4) .card, .container-lg :nth-child(12) :nth-child(4) .card, .container-xl :nth-child(12) :nth-child(4) .card, .container-xxl :nth-child(12) :nth-child(4) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(5) .card, .container-sm :nth-child(12) :nth-child(5) .card, .container-md :nth-child(12) :nth-child(5) .card, .container-lg :nth-child(12) :nth-child(5) .card, .container-xl :nth-child(12) :nth-child(5) .card, .container-xxl :nth-child(12) :nth-child(5) .card {
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(6) .card, .container-sm :nth-child(12) :nth-child(6) .card, .container-md :nth-child(12) :nth-child(6) .card, .container-lg :nth-child(12) :nth-child(6) .card, .container-xl :nth-child(12) :nth-child(6) .card, .container-xxl :nth-child(12) :nth-child(6) .card {
+  background-color: rgba(231, 171, 180, 0.6);
+  box-shadow: 8px 5px 1px rgba(231, 171, 180, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(7) .card, .container-sm :nth-child(12) :nth-child(7) .card, .container-md :nth-child(12) :nth-child(7) .card, .container-lg :nth-child(12) :nth-child(7) .card, .container-xl :nth-child(12) :nth-child(7) .card, .container-xxl :nth-child(12) :nth-child(7) .card {
+  background-color: rgba(139, 173, 163, 0.6);
+  box-shadow: 8px 5px 1px rgba(139, 173, 163, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(8) .card, .container-sm :nth-child(12) :nth-child(8) .card, .container-md :nth-child(12) :nth-child(8) .card, .container-lg :nth-child(12) :nth-child(8) .card, .container-xl :nth-child(12) :nth-child(8) .card, .container-xxl :nth-child(12) :nth-child(8) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(9) .card, .container-sm :nth-child(12) :nth-child(9) .card, .container-md :nth-child(12) :nth-child(9) .card, .container-lg :nth-child(12) :nth-child(9) .card, .container-xl :nth-child(12) :nth-child(9) .card, .container-xxl :nth-child(12) :nth-child(9) .card {
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(10) .card, .container-sm :nth-child(12) :nth-child(10) .card, .container-md :nth-child(12) :nth-child(10) .card, .container-lg :nth-child(12) :nth-child(10) .card, .container-xl :nth-child(12) :nth-child(10) .card, .container-xxl :nth-child(12) :nth-child(10) .card {
+  background-color: rgba(119, 131, 172, 0.6);
+  box-shadow: 8px 5px 1px rgba(119, 131, 172, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(11) .card, .container-sm :nth-child(12) :nth-child(11) .card, .container-md :nth-child(12) :nth-child(11) .card, .container-lg :nth-child(12) :nth-child(11) .card, .container-xl :nth-child(12) :nth-child(11) .card, .container-xxl :nth-child(12) :nth-child(11) .card {
+  background-color: rgba(140, 195, 252, 0.6);
+  box-shadow: 8px 5px 1px rgba(140, 195, 252, 0.2);
+}
+.container-fluid :nth-child(12) :nth-child(12) .card, .container-sm :nth-child(12) :nth-child(12) .card, .container-md :nth-child(12) :nth-child(12) .card, .container-lg :nth-child(12) :nth-child(12) .card, .container-xl :nth-child(12) :nth-child(12) .card, .container-xxl :nth-child(12) :nth-child(12) .card {
+  background-color: rgba(97, 156, 196, 0.6);
+  box-shadow: 8px 5px 1px rgba(97, 156, 196, 0.2);
 }
 
 .row {
@@ -13202,9 +13253,8 @@ footer span {
   margin-top: 5px;
   color: #555;
 }
-.comments-section .comments-list .friend-comment {
-  color: #123620;
-  font-weight: bold;
+.comments-section .comments-list .comment .friend-comment {
+  color: rgb(0, 129, 54);
 }
 .comments-section form {
   opacity: 1;

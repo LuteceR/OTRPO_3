@@ -15,6 +15,18 @@
             @method('PATCH')
             <button type="submit">Восстановить</button>
         </form>
+
+        <form action="{{ route('character-cards.forceDelete', $card->id) }}"
+                  method="POST"
+                  style="display:inline"
+                  onsubmit="return confirm('Удалить навсегда? Это действие нельзя отменить!')">
+            @csrf
+            @method('DELETE')
+            <button type="submit">
+                Удалить навсегда
+            </button>
+        </form>
+
     </div>
 @endforeach
 

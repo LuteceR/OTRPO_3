@@ -41,7 +41,7 @@ class CharacterCardController extends Controller
         $isAdmin = session('is_admin');
 
 
-        $cards = CharacterCard::query()
+        $cards = CharacterCard::whereNull('deleted_at')
             ->orderBy('id')
             ->paginate(10);
 
@@ -70,8 +70,10 @@ class CharacterCardController extends Controller
             'name'       => 'required|string|max:255',
             'img_url'    => 'nullable|string',
             'tiny_desc'  => 'nullable|string|max:255',
-            'long_desc'  => 'nullable|string',
+            'long_desc'  => 'nullable|string'
         ]);
+
+        $data['user_id'] = (int) auth()->id();
 
         $card = CharacterCard::create($data);
 
@@ -151,6 +153,16 @@ class CharacterCardController extends Controller
         return redirect()
             ->route('character-cards.index')
             ->with('success', 'Карта восстановлена');
+    }
+
+    public function forceDelete($id)
+    {
+        $card = CharacterCard::onlyTrashed()->findOrFail($id);
+        $card->forceDelete();
+
+        return redirect()
+            ->route('character-cards.deleted')
+            ->with('success', 'Карточка удалена навсегда');
     }
 
     public function deleted() 

@@ -20,6 +20,7 @@ class CharacterCard extends Model
         'long_desc',
         'created_at',
         'updated_at',
+        'user_id'
     ];
     
     protected $casts = [

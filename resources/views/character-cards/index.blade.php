@@ -9,7 +9,7 @@
         @endif
         <div class="row justify-content-center">
             <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-xlsm">
-                <div class='card'>
+                <div id='{{ $card->id }}' class='card'>
                     <div id='{{ $card->id }}' class='card-btn-zone'>
                         <img class = 'card-img-top img-fluid' src='/images/{{ $card->img_url  }}'/>
                         <div class='card-body'>
@@ -33,7 +33,7 @@
         @else
 
         <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-xlsm">
-            <div class='card'>
+            <div id='{{ $card->id }}' class='card'>
                 <div id='{{ $card->id }}' class='card-btn-zone'>
                     <img class = 'card-img-top img-fluid' src='/images/{{ $card->img_url  }}' />
                     <div class='card-body'>

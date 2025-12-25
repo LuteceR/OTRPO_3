@@ -42,7 +42,7 @@
     </div>
 
     <div class="nav navbar navbar-expand-lg">
-        <a class='home-link' href='/character-cards'>
+        <a class='home-link' href='/'>
             <div class="navbar-brand logo">
                 <img src="/icons/favicon.ico" alt="logo">
             </div>
@@ -51,6 +51,7 @@
             </div>
         </a>
         @php
+            $isAdmin = 0;
             $user = Auth::user();
         @endphp
         @if ($user) 
@@ -67,7 +68,11 @@
                 @endif
             </a>
         @endif
+        @if ($isAdmin)
         <a href="{{ route('character-cards.deleted') }}" class='deleted-cards'>Удалённые карточки</a>
+        @else
+
+        @endif
         <button id="liveToastBtn" type="button" class="btn btn-primary">Cкачать</button>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -109,7 +114,9 @@
     <!-- BS JavaScript -->
     <script src="{{ asset('~bootstrap') }}"></script>
 
+    <script>
+        window.authUser = @json(auth()->user());
+    </script>
 
-    
 </body>
 </htmlh>

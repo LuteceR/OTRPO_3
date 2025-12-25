@@ -17,7 +17,7 @@
             $isFriend = Auth::user()->isFriend($comment->user_id);
             @endphp
             <div class="comment">
-                <span class="comment-user {{ $isFriend ? 'friend-comment' : '' }}" >{{ $isFriend ? '✋' : '' }} {{$comment->getUserOfComment()}}</span>
+                <span class="comment-user {{ $isFriend ? 'friend-comment' : '' }}" >{{ $isFriend ? '✋' : '' }} {{$comment->getUser()}}</span>
                 <span class="created-at">{{ $comment->created_at }}</span>
                 <p class="comment-text">{{ $comment->comment }}</p>
             </div>

@@ -60,3 +60,8 @@ Route::post('/registr', [CharacterCardController::class, 'tryRegistr'])->name('t
 Route::middleware('auth')->group(function () {
     Route::get('/character-cards', [CharacterCardController::class, 'index'])->name('character-cards.index');
 });
+
+Route::delete('/character-cards/{id}/force-delete', 
+    [CharacterCardController::class, 'forceDelete']
+)->name('character-cards.forceDelete');
+

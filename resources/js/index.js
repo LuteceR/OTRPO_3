@@ -43,7 +43,9 @@ const dict_popover = {
 
 
 $(document).ready(function() {
-    
+
+    // window.authUser - объект с текущим пользователем
+
     //Toast
     if (liveToastBtn) {
       const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toast)
@@ -143,7 +145,7 @@ $(document).ready(function() {
             event.preventDefault();
 
             var obj = event.target.closest(".card");
-            console.log(obj)
+            // console.log(obj)
 
             let menus = document.querySelectorAll("#contextmenu");
             // console.log(menus);
@@ -169,43 +171,49 @@ $(document).ready(function() {
 
             contextmenu.appendChild(btnAdd);
 
-            var url = `/character-cards/${obj.id}/edit`;
-            var btnEdit = document.createElement("div");
-            btnEdit.textContent = "Редактировать карточку";
-            btnEdit.id = "button-edit";
+            // console.log(obj.id);
+            // console.log(window.authUser.name);
 
-            btnEdit.addEventListener("click", function(event) {
-                // console.log(event.target);
-                window.location.replace(url);
-                contextmenu.remove();
-            });
-            
-            contextmenu.appendChild(btnEdit);
-            
-            var btnDel = document.createElement("div");
-            btnDel.textContent = "Удалить карточку";
-            btnDel.id = "button-del";
-            // var del_url = `/character-cards/${obj.id}`;
+            if (window.authUser.is_admin || window.authUser.name == obj.querySelector('.creator').textContent) {
+                var url = `/character-cards/${obj.id}/edit`;
+                var btnEdit = document.createElement("div");
+                btnEdit.textContent = "Редактировать карточку";
+                btnEdit.id = "button-edit";
+                
+                
+                btnEdit.addEventListener("click", function(event) {
+                    // console.log(event.target);
+                    window.location.replace(url);
+                    contextmenu.remove();
+                });
+                
+                contextmenu.appendChild(btnEdit);
 
-            btnDel.addEventListener("click", function(event) {
-                // window.location.replace(url);
-                contextmenu.remove();
-                // console.log(obj.id);
+                var btnDel = document.createElement("div");
+                btnDel.textContent = "Удалить карточку";
+                btnDel.id = "button-del";
+                // var del_url = `/character-cards/${obj.id}`;
+    
+                btnDel.addEventListener("click", function(event) {
+                    contextmenu.remove();
+    
+                    if (confirm(`Вы уверены?`)) {
+                        fetch(`character-cards/${obj.id}`, {
+                            method: "DELETE",
+                            headers: {
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                            }
+                        }).then(() => {
+                            window.location.replace('character-cards');
+                        })
+                    }
+                });
+    
+                
+                contextmenu.appendChild(btnDel);
 
-                if (confirm(`Вы уверены?`)) {
-                    fetch(`character-cards/${obj.id}`, {
-                        method: "DELETE",
-                        headers: {
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                        }
-                    }).then(() => {
-                        // obj.remove();
-                        window.location.replace('character-cards');
-                    })
-                }
-            });
+            }
             
-            contextmenu.appendChild(btnDel);
 
             let e = window.event;
             let windowWidth = window.innerWidth;
