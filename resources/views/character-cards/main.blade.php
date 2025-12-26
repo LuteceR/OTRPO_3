@@ -20,10 +20,6 @@
     <div class=".body-copy"></div>
     <div class=".body-copy"></div>
     <div class=".body-copy"></div>
-    @php
-    $arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4];
-    echo count($arr);
-    @endphp
     <!-- modals для карт .card -->
     @yield('modalCards')
 
