@@ -300,6 +300,34 @@ input.checkBox {
     }
 }
 
+.container {
+    nav {
+        display:flex;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+
+        ul {
+            display:flex;
+            align-self: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+
+            li {
+                background-color: rgba(#2c3c54, 0.0) !important;
+                display:flex;
+                align-self: center;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+
 .table {
     z-index: 1000;
     opacity: 1;

@@ -6,7 +6,7 @@ use App\Http\Controllers\blahController;
 use App\Http\Controllers\CharacterCardController;
 use App\Http\Controllers\CardCommentController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +76,7 @@ Route::delete('/character-cards/{id}/force-delete',
     [CharacterCardController::class, 'forceDelete']
 )->name('character-cards.forceDelete');
 
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+Route::get('/users/{user}', [UserController::class, 'show'])
+    ->name('users.show');

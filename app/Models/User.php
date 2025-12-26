@@ -59,6 +59,11 @@ class User extends Authenticatable
         return null;
     }
 
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+
     public function friends()
 	{
 		return $this->belongsToMany(User::class, 'friends_users', 'user_id', 'friend_id');
