@@ -13,14 +13,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/ico" href="icons/favicon.ico">
-    @Vite(['resources/sass/style.scss', 'resources/js/index.js'])
+    @Vite(['resources/sass/style.scss'])
 </head>
 <body>
     
     <div class=".body-copy"></div>
     <div class=".body-copy"></div>
     <div class=".body-copy"></div>
-
+    @php
+    $arr = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4];
+    echo count($arr);
+    @endphp
     <!-- modals для карт .card -->
     @yield('modalCards')
 
@@ -113,7 +116,7 @@
     <script src="{{ asset('~jquery') }}"></script>
     <!-- BS JavaScript -->
     <script src="{{ asset('~bootstrap') }}"></script>
-
+    @Vite(['resources/js/index.js'])
     <script>
         window.authUser = @json(auth()->user());
     </script>

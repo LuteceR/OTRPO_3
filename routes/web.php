@@ -52,7 +52,7 @@ Route::post('/dashboard/add-friend/{id}', [DashboardController::class, 'store'])
 Route::post('/dashboard/remove-friend/{id}', [DashboardController::class, 'destroy'])->name('friend.destroy');
 Route::get('/dashboard/feed', [DashboardController::class, 'feed'])->name('feed');
 
-Route::get('/', [CharacterCardController::class, 'login']);
+Route::get('/', [CharacterCardController::class, 'login'])->name('login');
 
 Route::post('/', [CharacterCardController::class, 'tryAuth'])->name('tryAuth');
 
