@@ -17,12 +17,21 @@
         </thead>
         <tbody>
             @foreach ($users as $user)
+            @if ($user->is_admin)
+                <tr>
+                    <td>{{ $user->id }}</td>
+                    <td>🔑{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->is_admin ? 'Да' : 'Нет' }}</td>
+                </tr>
+            @else
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->is_admin ? 'Да' : 'Нет' }}</td>
                 </tr>
+            @endif
             @endforeach
         </tbody>
     </table>
