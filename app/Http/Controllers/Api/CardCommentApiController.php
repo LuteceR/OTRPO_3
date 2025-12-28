@@ -39,7 +39,11 @@ class CardCommentApiController extends Controller
 
     public function update(Request $request, CardComment $cardComment)
     {
-        $this->authorize('update', $cardComment);
+        $user = auth()->user();
+
+        if ($user->id !== $cardComment->user_id) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
 
         $data = $request->validate([
             'comment' => 'required|string',
@@ -52,7 +56,11 @@ class CardCommentApiController extends Controller
 
     public function destroy(CardComment $cardComment)
     {
-        $this->authorize('delete', $cardComment);
+        $user = auth()->user();
+
+        if ($user->id !== $cardComment->user_id) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
 
         $cardComment->delete();
 
