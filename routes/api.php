@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CharacterCardController;
+// use App\Http\Controllers\CharacterCardController;
 use Laravel\Passport\Http\Controllers\AccessTokenController;
 
 use App\Http\Controllers\Api\CharacterCardApiController;

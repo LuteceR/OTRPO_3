@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -15,20 +17,22 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $loginInput = $request->login;
+        // Определяем, email это или username
+        $field = filter_var($request->login, FILTER_VALIDATE_EMAIL)
+            ? 'email'
+            : 'name';
 
-        $credentials = (strpos($loginInput, '@') !== false && strpos($loginInput, '.') !== false)
-            ? ['email' => $loginInput, 'password' => $request->password]
-            : ['name' => $loginInput, 'password' => $request->password];
+        $user = User::where($field, $request->login)->first();
 
-        if (!Auth::attempt($credentials)) {
-            return response()->json(['message' => 'Неверный логин или пароль'], 401);
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response()->json([
+                'message' => 'Неверный логин или пароль'
+            ], 401);
         }
 
-        $user = Auth::user();
-
-        // создаём токен через Sanctum
-        $token = $user->createToken('api-token')->plainTextToken;
+        // создаём токен
+        $tokenResult = $user->createToken('api-token');
+        $token = $tokenResult->accessToken;
 
         return response()->json([
             'user_id' => $user->id,
@@ -39,8 +43,12 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->user()->currentAccessToken()->delete();
+        if ($request->user()) {
+            $request->user()->currentAccessToken()->delete();
+        }
 
-        return response()->json(['message' => 'Вы вышли']);
+        return response()->json([
+            'message' => 'Вы вышли'
+        ]);
     }
 }

@@ -8,27 +8,39 @@ use App\Models\CharacterCard;
 
 class CharacterCardApiController extends Controller
 {
+    public function __construct()
+    {
+        // 🔐 защита всех методов
+        $this->middleware('auth:sanctum');
+    }
+
     public function index()
     {
-        return CharacterCard::with('user')->get();
+        return response()->json(
+            CharacterCard::with('user')->get()
+        );
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'tiny_desc' => 'nullable',
-            'long_desc' => 'nullable',
+            'name' => 'required|string',
+            'tiny_desc' => 'nullable|string',
+            'long_desc' => 'nullable|string',
         ]);
 
         $data['user_id'] = auth()->id();
 
-        return CharacterCard::create($data);
+        return response()->json(
+            CharacterCard::create($data),
+            201
+        );
     }
 
     public function update(Request $request, CharacterCard $card)
     {
         $card->update($request->all());
-        return $card;
+
+        return response()->json($card);
     }
 }
