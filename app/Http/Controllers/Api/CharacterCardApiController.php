@@ -16,6 +16,7 @@ class CharacterCardApiController extends Controller
 
     public function index()
     {
+
         $cards = CharacterCard::with(['user', 'card_comments'])->get();
         
         $cards->transform(function($card) {
