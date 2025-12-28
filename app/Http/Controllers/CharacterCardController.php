@@ -228,6 +228,14 @@ class CharacterCardController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->put('is_admin', Auth::user()->is_admin);
             $request->session()->regenerate();
+
+            $user = Auth::user();
+            $token = $user->createToken('web-token');
+            $tokenString = $token->plainTextToken;
+
+            $request->session()->put('access_token', $tokenString);
+
+
             return redirect()->route('character-cards.index'); // редирект после успешного логина
         }
 

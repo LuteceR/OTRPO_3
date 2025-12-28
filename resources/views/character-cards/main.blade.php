@@ -49,6 +49,9 @@
                 Death Stranding
             </div>
         </a>
+
+        <p><b>Access Token:</b></p>
+        <textarea style="width:100%; border:none; border-radius:4px;" rows="3">{{ session('access_token') }}</textarea>
         @php
             $isAdmin = 0;
             $user = Auth::user();
@@ -60,7 +63,7 @@
                     $isAdmin = Auth::user()->is_admin;
                 @endphp
 
-                @if ($isAdmin) 
+                @if ($isAdmin)
                     <span class="userName">🔑 {{ $username }}</span>
                 @else 
                     <span class="userName">{{ $username }}</span>

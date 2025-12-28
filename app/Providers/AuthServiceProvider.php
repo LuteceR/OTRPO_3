@@ -26,8 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-                $this->registerPolicies();
+                // $this->registerPolicies();
 
         // Gate для удаления карточки
         Gate::define('delete-card', function ($user, CharacterCard $card) {
