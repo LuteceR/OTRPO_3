@@ -5,28 +5,34 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CharacterCard;
+use App\Http\Resources\CardCommentResource;
 
 class CharacterCardApiController extends Controller
 {
     public function __construct()
     {
-        // 🔐 защита всех методов
         $this->middleware('auth:sanctum');
     }
 
     public function index()
     {
+        $cards = CharacterCard::with(['user', 'card_comments'])->get();
+        
+        $cards->transform(function($card) {
+            $card->card_comments = CardCommentResource::collection($card->card_comments);
+            return $card;
+        });
 
-        return CharacterCard::with('user')->get();
+        return response()->json($cards);
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'tiny_desc' => 'string|required',
-            'long_desc' => 'string|required',
-            'img_url' => 'string|required',
+            'name' => 'required|string',
+            'tiny_desc' => 'required|string',
+            'long_desc' => 'required|string',
+            'img_url' => 'required|string',
         ]);
 
         $data['user_id'] = auth()->id();
@@ -40,13 +46,13 @@ class CharacterCardApiController extends Controller
     public function update(Request $request, CharacterCard $card)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'tiny_desc' => 'string|required',
-            'long_desc' => 'string|required',
-            'img_url' => 'string|required',
+            'name' => 'required|string',
+            'tiny_desc' => 'required|string',
+            'long_desc' => 'required|string',
+            'img_url' => 'required|string',
         ]);
 
-        $card->update($data->all());
-        return $card;
+        $card->update($data);
+        return response()->json($card);
     }
 }
