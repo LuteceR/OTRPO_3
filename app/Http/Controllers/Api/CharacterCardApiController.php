@@ -10,6 +10,7 @@ class CharacterCardApiController extends Controller
 {
     public function index()
     {
+
         return CharacterCard::with('user')->get();
     }
 
@@ -17,8 +18,9 @@ class CharacterCardApiController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'tiny_desc' => 'nullable',
-            'long_desc' => 'nullable',
+            'tiny_desc' => 'string|required',
+            'long_desc' => 'string|required',
+            'img_url' => 'string|required',
         ]);
 
         $data['user_id'] = auth()->id();
@@ -28,7 +30,14 @@ class CharacterCardApiController extends Controller
 
     public function update(Request $request, CharacterCard $card)
     {
-        $card->update($request->all());
+        $data = $request->validate([
+            'name' => 'required',
+            'tiny_desc' => 'string|required',
+            'long_desc' => 'string|required',
+            'img_url' => 'string|required',
+        ]);
+
+        $card->update($data->all());
         return $card;
     }
 }
