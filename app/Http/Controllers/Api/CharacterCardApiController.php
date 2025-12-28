@@ -16,17 +16,17 @@ class CharacterCardApiController extends Controller
 
     public function index()
     {
-        return response()->json(
-            CharacterCard::with('user')->get()
-        );
+
+        return CharacterCard::with('user')->get();
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string',
-            'tiny_desc' => 'nullable|string',
-            'long_desc' => 'nullable|string',
+            'name' => 'required',
+            'tiny_desc' => 'string|required',
+            'long_desc' => 'string|required',
+            'img_url' => 'string|required',
         ]);
 
         $data['user_id'] = auth()->id();
@@ -39,8 +39,14 @@ class CharacterCardApiController extends Controller
 
     public function update(Request $request, CharacterCard $card)
     {
-        $card->update($request->all());
+        $data = $request->validate([
+            'name' => 'required',
+            'tiny_desc' => 'string|required',
+            'long_desc' => 'string|required',
+            'img_url' => 'string|required',
+        ]);
 
-        return response()->json($card);
+        $card->update($data->all());
+        return $card;
     }
 }
