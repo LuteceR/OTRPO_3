@@ -4,7 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterCardController;
 use Laravel\Passport\Http\Controllers\AccessTokenController;
+
 use App\Http\Controllers\Api\CharacterCardApiController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +28,11 @@ Route::post('oauth/token', [
     'issueToken'
 ]);
 
-Route::middleware('auth:api')->group(function () {
+Route::post('login', [AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::apiResource('character-cards', CharacterCardApiController::class)->only(['index','store','update']);
     Route::get('/cards', [CharacterCardApiController::class, 'index']);
     Route::post('/cards', [CharacterCardApiController::class, 'store']);
     Route::put('/cards/{card}', [CharacterCardApiController::class, 'update']);
