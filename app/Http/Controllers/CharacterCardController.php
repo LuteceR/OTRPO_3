@@ -231,7 +231,7 @@ class CharacterCardController extends Controller
 
             $user = Auth::user();
             $token = $user->createToken('web-token');
-            $tokenString = $token->plainTextToken;
+            $tokenString = $token->accessToken;
 
             $request->session()->put('access_token', $tokenString);
 

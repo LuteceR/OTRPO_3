@@ -22,13 +22,9 @@ use App\Http\Controllers\AuthController;
 */
 
 
-Route::get('/character-cards/deleted',
-    [CharacterCardController::class, 'deleted'])->name('character-cards.deleted');
+Route::get('/character-cards/deleted', [CharacterCardController::class, 'deleted'])->name('character-cards.deleted');
 
-Route::patch(
-    '/character-cards/{id}/restore',
-    [CharacterCardController::class, 'restore']
-    )->name('character-cards.restore');
+Route::patch('/character-cards/{id}/restore', [CharacterCardController::class, 'restore'])->name('character-cards.restore');
 
 Route::resource('character-cards', CharacterCardController::class);
 
@@ -80,8 +76,7 @@ Route::delete('/character-cards/{id}/force-delete',
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
-Route::get('/users/{user}', [UserController::class, 'show'])
-    ->name('users.show');
+Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

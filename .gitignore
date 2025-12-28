@@ -17,3 +17,4 @@ composer.json
 package-lock.json
 public/build
 .gitignore
+public/build/manifest.json
