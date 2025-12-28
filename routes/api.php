@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterCardController;
+use Laravel\Passport\Http\Controllers\AccessTokenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,10 @@ use App\Http\Controllers\CharacterCardController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('oauth/token', [
+    AccessTokenController::class,
+    'issueToken'
+]);
 
 // Route::resource('character-cards', CharacterCardController::class);
