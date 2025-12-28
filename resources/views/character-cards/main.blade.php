@@ -50,8 +50,8 @@
             </div>
         </a>
 
-        <p><b>Access Token:</b></p>
-        <textarea style="width:100%; border:none; border-radius:4px;" rows="3">{{ session('access_token') }}</textarea>
+        <textarea rows="1" cols="43">{{ session('access_token') }}</textarea>
+
         @php
             $isAdmin = 0;
             $user = Auth::user();
