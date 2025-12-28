@@ -16,11 +16,14 @@ class CharacterCardApiController extends Controller
 
     public function index()
     {
+        $user = auth()->user();
+        $friendIds = $user->friends()->pluck('id')->toArray();
 
         $cards = CharacterCard::with(['user', 'card_comments'])->get();
-        
-        $cards->transform(function($card) {
+
+        $cards->transform(function($card) use ($friendIds) {
             $card->card_comments = CardCommentResource::collection($card->card_comments);
+            $card->is_friend = in_array($card->user_id, $friendIds);
             return $card;
         });
 
