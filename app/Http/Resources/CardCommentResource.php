@@ -15,9 +15,20 @@ class CardCommentResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'user_id' => $this->user_id,
-            'character_card_id' => $this->character_card_id,
+            'id' => $this->id,
             'comment' => $this->comment,
+            'user' => [
+                'id' => $this->user->id,
+                'name' => $this->user->name,
+            ],
+            'character_card' => [
+                'id' => $this->characterCard->id,
+                'name' => $this->characterCard->name,
+                'creator' => [
+                    'id' => $this->characterCard->user->id,
+                    'name' => $this->characterCard->user->name,
+                ]
+            ]
         ];
     }
 }

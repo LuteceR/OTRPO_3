@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\CharacterCardController;
 use Laravel\Passport\Http\Controllers\AccessTokenController;
 
+use App\Http\Controllers\Api\CardCommentApiController;
 use App\Http\Controllers\Api\CharacterCardApiController;
 use App\Http\Controllers\Api\AuthController;
 
@@ -36,6 +37,13 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/cards', [CharacterCardApiController::class, 'index']);
     Route::post('/cards', [CharacterCardApiController::class, 'store']);
     Route::put('/cards/{card}', [CharacterCardApiController::class, 'update']);
+
+    Route::get('card-comments', [CardCommentApiController::class, 'index']);
+    Route::post('card-comments', [CardCommentApiController::class, 'store']);
+    Route::put('card-comments/{cardComment}', [CardCommentApiController::class, 'update']);
+    Route::delete('card-comments/{cardComment}', [CardCommentApiController::class, 'destroy']);
 });
+
+
 
 // Route::resource('character-cards', CharacterCardController::class);

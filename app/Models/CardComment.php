@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\CharacterCard;
 
 class CardComment extends Model
 {
@@ -15,10 +16,15 @@ class CardComment extends Model
         'character_card_id',
         'comment',
     ];
+
+    public function characterCard()
+    {
+        return $this->belongsTo(CharacterCard::class);
+    }
     
     public function user()
     {
-        return $this->belongsTo(CharacterCard::class);
+        // return $this->belongsTo(CharacterCard::class);
         return $this->belongsTo(User::class);
     }
 
